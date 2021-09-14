@@ -39,7 +39,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_075919) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["experience_id"], name: "index_favorites_on_experience_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
-    
+  end
+
   create_table "questions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "experience_id", null: false
