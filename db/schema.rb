@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_14_070436) do
+ActiveRecord::Schema.define(version: 2021_09_14_075919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,28 @@ ActiveRecord::Schema.define(version: 2021_09_14_070436) do
     t.index ["review_id"], name: "index_experiences_on_review_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "experience_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["experience_id"], name: "index_favorites_on_experience_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "userexperiences", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "experience_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["experience_id"], name: "index_userexperiences_on_experience_id"
+    t.index ["user_id"], name: "index_userexperiences_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +63,8 @@ ActiveRecord::Schema.define(version: 2021_09_14_070436) do
   end
 
   add_foreign_key "experiences", "reviews"
+  add_foreign_key "favorites", "experiences"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "userexperiences", "experiences"
+  add_foreign_key "userexperiences", "users"
 end
