@@ -15,6 +15,13 @@ ActiveRecord::Schema.define(version: 2021_09_14_075919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answers", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
   create_table "experiences", force: :cascade do |t|
     t.string "name"
     t.string "details"
@@ -32,6 +39,14 @@ ActiveRecord::Schema.define(version: 2021_09_14_075919) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["experience_id"], name: "index_favorites_on_experience_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+    
+  create_table "questions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "experience_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["experience_id"], name: "index_questions_on_experience_id"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -62,9 +77,12 @@ ActiveRecord::Schema.define(version: 2021_09_14_075919) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "experiences", "reviews"
   add_foreign_key "favorites", "experiences"
   add_foreign_key "favorites", "users"
   add_foreign_key "userexperiences", "experiences"
   add_foreign_key "userexperiences", "users"
+  add_foreign_key "questions", "experiences"
+  add_foreign_key "questions", "users"
 end
