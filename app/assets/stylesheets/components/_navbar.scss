@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  position : relative;
   justify-content: space-between;
   background: white;
 }
@@ -8,5 +9,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 55px;
 }
