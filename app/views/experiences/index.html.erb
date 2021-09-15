@@ -1,26 +1,20 @@
-<div class="cards">
 
-    <% @experiences.each do |experience| %>
-        <%= link_to experience_path(experience) do  %>
 
-          <%= image_tag experience.poster_url, alt: experience.name, class: 'rounded-top'%>
+<div class="container my-5">
 
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-            <p ><%= experience.name %> </p>
-            <p><%= experience.details %></p>
-            <p><%= experience.price %></p>
-          </div>
+  <div class="cards">
 
-        <% end %>
-    <% end %>
+      <% @experiences.each do |experience| %>
+          <%= link_to experience_path(experience) do  %>
+            <img src=<%= experience.photo_url%> class="experience-img">
+            <div class="rounded-bottom p-3 d-flex flex-column background-white">
+              <strong><%= experience.name %> </strong>
+              <small class="text-muted"><%= experience.details %></small>
+              <small class="text-muted"><%= experience.price %></small>
+            </div>
+          <% end %>
+      <% end %>
+
+  </div>
 
 </div>
-
-  <%= form_tag experiences_path, method: :get do %>
-  <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a experience"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
