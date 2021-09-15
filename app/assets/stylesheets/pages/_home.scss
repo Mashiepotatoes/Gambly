@@ -1,9 +1,30 @@
 // Specific CSS for your home-page
 .container-landing {
-  width: 900px;
+  width: 460px;
   margin: 0 auto;
+  position: absolute;
+  top: 250px;
+  left: 120px;
+}
+.landing-logo {
+  height: 120px;
 }
 
-.landing-logo {
-  height: 150px;
+// ----------- buttons ---------- //
+.landing-btns-grp {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.landing-btn {
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.landing-btn:hover {
+  text-decoration: none;
+  color: white;
+  transform: scale(1.1);
 }

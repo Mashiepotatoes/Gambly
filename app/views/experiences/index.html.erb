@@ -1,20 +1,36 @@
-
-
-<div class="container my-5">
-
-  <div class="cards">
-
-      <% @experiences.each do |experience| %>
-          <%= link_to experience_path(experience) do  %>
-            <img src=<%= experience.photo_url%> class="experience-img">
-            <div class="rounded-bottom p-3 d-flex flex-column background-white">
-              <strong><%= experience.name %> </strong>
-              <small class="text-muted"><%= experience.details %></small>
-              <small class="text-muted"><%= experience.price %></small>
-            </div>
-          <% end %>
-      <% end %>
-
+<!--------- banner --------->
+<div class="exp-index-banner">
+ <div class="landing-btns-grp d-flex">
+    <%= link_to "Login", new_user_session_path, class: "landing-btn" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "landing-btn" %>
   </div>
 
+  <!------ banner/search bar ------>
+  <div class="container-index">
+    <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
+    <%= form_tag experiences_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an experience"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<!--------- cards ---------->
+<div class="container my-5">
+  <div class="cards">
+    <% @experiences.each do |experience| %>
+        <%= link_to experience_path(experience) do  %>
+          <img src=<%= experience.photo_url%> class="experience-img">
+          <div class="rounded-bottom p-3 d-flex flex-column background-white">
+            <strong><%= experience.name %> </strong>
+            <small class="text-muted"><%= experience.details %></small>
+            <small class="text-muted"><%= experience.price %></small>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>
