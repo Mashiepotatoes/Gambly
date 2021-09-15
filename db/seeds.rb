@@ -15,7 +15,7 @@ puts 'Creating 30 fake experiences...'
   puts "create experience#{i}"
   experience = Experience.new(
     name: Faker::Commerce.department,
-    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, sapien quis pretium feugiat, mi turpis finibus felis, at tincidunt est enim nec dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ac libero vitae libero pretium imperdiet. Nam sed diam erat. Nam egestas pellentesque nibh, vitae blandit tellus. Quisque urna erat, pharetra nec bibendum quis, ultrices a elit. Mauris elementum, lectus quis faucibus molestie, ipsum felis ullamcorper libero, at finibus diam enim malesuada lorem. Etiam dignissim elit vel vehicula suscipit. Nulla ac lorem pharetra, varius ante ut, lobortis lorem. Nunc ante libero, lobortis ut convallis et, suscipit nec leo. Suspendisse consectetur nulla vitae tincidunt mollis. Vivamu",
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, sapien quis pretium feugiat",
     price: 49.99,
     photo_url: "https://picsum.photos/1980/720"
   )

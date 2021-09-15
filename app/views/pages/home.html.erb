@@ -1,7 +1,5 @@
-<%= javascript_pack_tag 'home', 'data-turbolinks-track': 'reload', defer: true %>
-
 <div class="background">
-  <div class="container">
+  <%# <div class="container">
 
     <div class="input-group">
     <div class="form-outline">
@@ -12,5 +10,13 @@
       <i class="fas fa-search"></i>
     </button>
 
-  </div>
+  </div> %>
+  <%= form_tag experiences_path, method: :get do %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a experience"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </div>
