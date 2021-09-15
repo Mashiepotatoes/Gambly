@@ -1,13 +1,15 @@
 <div class="container">
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
+    <img src=<%=@experience.photo_url%> />
+    <div class="card-trip-container">
+      <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
         <p><%= @experience.details %></p>
       </div>
-      <h2 class="card-trip-pricing">$<%= @experience.price %></h2>
+      <div class="card-trip-checkout">
+        <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
+        <a class="btn btn-flat float-right" href="#">Book now</a>
+      </div>
     </div>
-    <a class="btn btn-flat" href="#">Book now</a>
   </div>
 </div>
