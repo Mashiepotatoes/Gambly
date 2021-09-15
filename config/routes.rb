@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :favorites, only: [:new, :create]
   end
 
-  # resources :checkout, only: [:create]
+  resources :checkout, only: [:index, :create]
 end

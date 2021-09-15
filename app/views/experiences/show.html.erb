@@ -8,7 +8,7 @@
       </div>
       <div class="card-trip-checkout">
         <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
-        <a class="btn btn-flat float-right" href="#">Book now</a>
+        <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
       </div>
     </div>
   </div>
