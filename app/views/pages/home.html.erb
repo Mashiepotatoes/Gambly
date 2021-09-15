@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= javascript_pack_tag 'home', 'data-turbolinks-track': 'reload', defer: true %>
+
+<div class="background">
+  <div class="container">
+
+    <div class="input-group">
+    <div class="form-outline">
+      <input id="search-input" type="search" id="form1" class="form-control" />
+      <label class="form-label" for="form1">Search</label>
+    </div>
+    <button id="search-button" type="button" class="btn btn-primary">
+      <i class="fas fa-search"></i>
+    </button>
+
+  </div>
+</div>
