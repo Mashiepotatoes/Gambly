@@ -1,6 +1,15 @@
 <div class="container">
-  <img src=" call watever seed url" alt="Activity images">
-  <h2><%= @experience.name.capitalize %></h2>
-  <%= @experience.details %>
-  $<%= @experience.price %>
+  <div class="card-trip">
+    <img src=<%=@experience.photo_url%> />
+    <div class="card-trip-container">
+      <div class="card-trip-infos">
+        <h2><%= @experience.name.capitalize %></h2>
+        <p><%= @experience.details %></p>
+      </div>
+      <div class="card-trip-checkout">
+        <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
+        <a class="btn btn-flat float-right" href="#">Book now</a>
+      </div>
+    </div>
+  </div>
 </div>

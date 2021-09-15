@@ -17,7 +17,7 @@ puts 'Creating 30 fake experiences...'
     name: Faker::Commerce.department,
     details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis, sapien quis pretium feugiat, mi turpis finibus felis, at tincidunt est enim nec dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ac libero vitae libero pretium imperdiet. Nam sed diam erat. Nam egestas pellentesque nibh, vitae blandit tellus. Quisque urna erat, pharetra nec bibendum quis, ultrices a elit. Mauris elementum, lectus quis faucibus molestie, ipsum felis ullamcorper libero, at finibus diam enim malesuada lorem. Etiam dignissim elit vel vehicula suscipit. Nulla ac lorem pharetra, varius ante ut, lobortis lorem. Nunc ante libero, lobortis ut convallis et, suscipit nec leo. Suspendisse consectetur nulla vitae tincidunt mollis. Vivamu",
     price: 49.99,
-    photo_url: "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
+    photo_url: "https://picsum.photos/1980/720"
   )
   experience.save!
 end
