@@ -1,6 +1,13 @@
 <div class="container">
-  <img src=" call watever seed url" alt="Activity images">
-  <h2><%= @experience.name.capitalize %></h2>
-  <%= @experience.details %>
-  $<%= @experience.price %>
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @experience.name.capitalize %></h2>
+        <p><%= @experience.details %></p>
+      </div>
+      <h2 class="card-trip-pricing">$<%= @experience.price %></h2>
+    </div>
+    <a class="btn btn-flat" href="#">Book now</a>
+  </div>
 </div>
