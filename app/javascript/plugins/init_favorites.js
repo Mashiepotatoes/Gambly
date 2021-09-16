@@ -1,6 +1,5 @@
 import { csrfToken } from "@rails/ujs";
 
-
 const initFavorites = () => {
   const heart = document.querySelector('.fa-heart');
   heart.addEventListener('click', (event) => {
@@ -8,8 +7,13 @@ const initFavorites = () => {
     // Change the heart to a filled heart - done
     // remove class far from the target
     // add class fas to the target
-    heart.classList.remove("far");
-    heart.classList.add("fas");
+    if (heart.classList.contains("far")) {
+      heart.classList.remove("far");
+      heart.classList.add("fas");
+    } else {
+      heart.classList.remove("fas");
+      heart.classList.add("far");
+    };
 
     // Make an api call to rails and create a new favorite association - hard
     // When I click

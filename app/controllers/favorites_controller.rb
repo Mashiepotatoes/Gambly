@@ -13,3 +13,8 @@ class FavoritesController < ApplicationController
     end
   end
 end
+
+// how to check if favorite have been favorited?
+// i have user_id, experience_id
+// do favorite_id exist?
+// if yes => favorited
