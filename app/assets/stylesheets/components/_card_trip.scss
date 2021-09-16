@@ -27,7 +27,6 @@
   margin: 8px;
 }
 
-
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -45,4 +44,19 @@
   justify-content: center;
   padding: 8px;
   width: 20%;
+}
+
+// ------- For sample.html.erb ------- //
+
+.card-trip-s {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 800px;
+}
+
+.card-trip-s > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
 }
