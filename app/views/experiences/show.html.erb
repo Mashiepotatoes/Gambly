@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
     <% if current_user.has_favorited?(@experience) %>
@@ -6,15 +6,22 @@
     <% else %>
     <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
     <% end %>
-    <div class="card-trip-container">
+    <div class="card-trip-container p-3">
       <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
-        <p><%= @experience.details %></p>
+        <div class="experience-details">
+          <% @experience.details.split('@').each do |detail| %>
+            <p>• <%= detail %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="card-trip-checkout">
-        <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
-        <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
-      </div>
+
+        <div class="card-trip-checkout">
+          <h3 class="card-trip-pricing float-right">$ <%= @experience.price %></h3>
+          <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
+        </div>
+
+
     </div>
     <%= link_to "Back", experiences_path%>
   </div>
