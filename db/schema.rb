@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_035312) do
+ActiveRecord::Schema.define(version: 2021_09_16_040756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 2021_09_15_035312) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["experience_id"], name: "index_favorites_on_experience_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "experience_sku"
+    t.decimal "amount"
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "experience_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["experience_id"], name: "index_orders_on_experience_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -83,6 +96,8 @@ ActiveRecord::Schema.define(version: 2021_09_15_035312) do
   add_foreign_key "experiences", "reviews"
   add_foreign_key "favorites", "experiences"
   add_foreign_key "favorites", "users"
+  add_foreign_key "orders", "experiences"
+  add_foreign_key "orders", "users"
   add_foreign_key "questions", "experiences"
   add_foreign_key "questions", "users"
   add_foreign_key "userexperiences", "experiences"
