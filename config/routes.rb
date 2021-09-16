@@ -10,12 +10,9 @@ Rails.application.routes.draw do
     resources :favorites, only: [:new, :create]
   end
 
-<<<<<<< HEAD
   resources :favorites, only: [:index]
   resources :checkout, only: [:index, :create]
-=======
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
->>>>>>> e9d2f3e (g order n payment model/controller)
 end
