@@ -9,13 +9,11 @@
     <div class="card-trip-container p-3">
       <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
-<<<<<<< HEAD
         <div class="experience-details">
           <% @experience.details.split('@').each do |detail| %>
             <p>• <%= detail %></p>
           <% end %>
         </div>
-=======
         <p><%= @experience.details %></p>
       </div>
       <div class="card-trip-checkout">
@@ -24,15 +22,7 @@
           <%= hidden_field_tag 'experience_id', @experience.id %>
           <%= submit_tag 'Book now', class: 'btn btn-primary' %>
         <% end %>
->>>>>>> e9d2f3e (g order n payment model/controller)
       </div>
-
-        <div class="card-trip-checkout">
-          <h3 class="card-trip-pricing float-right">$ <%= @experience.price %></h3>
-          <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
-        </div>
-
-
     </div>
     <%= link_to "Back", experiences_path%>
   </div>
