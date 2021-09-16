@@ -19,4 +19,8 @@ class ExperiencesController < ApplicationController
   def sample
     @random_experience = Experience.all.sample
   end
+
+  def filter_by_location
+    @filtered_locations = Experience.where(params[:location])
+  end
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :experiences, only: [:index, :show] do
     collection do
       get :sample
+      get :filter_by_location
     end
     resources :favorites, only: [:new, :create]
   end

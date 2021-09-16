@@ -16,15 +16,11 @@
   </div>
 </div>
 
-<!------- filters ------->
-
-<div>
-  <%= link_to "filter by Location", filter_by_location_experiences_path %>
-</div>
 <!--------- cards ---------->
 <div class="container my-5">
   <div class="cards">
-    <% @experiences.each do |experience| %>
+  
+    <% @filtered_experiences.each do |experience| %>
         <%= link_to experience_path(experience) do  %>
           <img src=<%= experience.photo_url%> class="experience-img">
           <div class="rounded-bottom p-3 d-flex flex-column background-white">
