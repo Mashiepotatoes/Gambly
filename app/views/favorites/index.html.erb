@@ -1,0 +1,13 @@
+<div class="container my-5">
+<h2>My Favorites</h2>
+  <div class="cards">
+    <% @favorites.each do |favorite| %>
+      <%= link_to experience_path(favorite.experience_id) do  %>
+      <div class="rounded-bottom p-3 d-flex flex-column background-white">
+        <img src=<%= favorite.experience.photo_url%> class="experience-img">
+        <strong class="experience-name"><%= favorite.experience.name %></strong>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

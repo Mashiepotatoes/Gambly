@@ -1,4 +1,8 @@
 class FavoritesController < ApplicationController
+  def index
+    @favorites = Favorite.all
+  end
+
   def new
   end
 
@@ -11,10 +15,17 @@ class FavoritesController < ApplicationController
         format.json { render json: { status: "favorite successfully created" } }
       end
     end
+
+
+  end
+
+  def favorited(experience_id)
+
+
   end
 end
 
-// how to check if favorite have been favorited?
-// i have user_id, experience_id
-// do favorite_id exist?
-// if yes => favorited
+# // how to check if favorite have been favorited?
+# // i have user_id, experience_id
+# // do favorite_id exist?
+# // if yes => favorited
