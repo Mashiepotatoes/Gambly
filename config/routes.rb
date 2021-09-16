@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:index]
   resources :checkout, only: [:index, :create]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 end

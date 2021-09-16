@@ -13,6 +13,7 @@ class User < ApplicationRecord
   # booking experiences
   has_many :user_experiences
   has_many :experiences, through: :user_experiences
+  has_many :orders
 
   def has_favorited?(given_exp)
     favorite_experiences.find do |exp|
