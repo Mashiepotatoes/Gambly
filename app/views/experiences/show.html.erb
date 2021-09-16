@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
-    <div class="heart"><i class="far fa-heart"></i></div>
+    <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
     <div class="card-trip-container">
       <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
@@ -12,5 +12,6 @@
         <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
       </div>
     </div>
+    <%= link_to "Back", experiences_path%>
   </div>
 </div>
