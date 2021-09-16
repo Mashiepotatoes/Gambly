@@ -15,13 +15,6 @@ class FavoritesController < ApplicationController
         format.json { render json: { status: "favorite successfully created" } }
       end
     end
-
-
-  end
-
-  def favorited(experience_id)
-
-
   end
 end
 

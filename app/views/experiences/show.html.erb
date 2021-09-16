@@ -1,7 +1,11 @@
 <div class="container">
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
+    <% if current_user.has_favorited?(@experience) %>
+    <div class="heart"><i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i></div>
+    <% else %>
     <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
+    <% end %>
     <div class="card-trip-container">
       <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
