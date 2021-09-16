@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
   def index
     if params[:query].present?
-      @experiences = Experience.where("name ILIKE ?", "%#{params[:query]}%")
+      @experiences = Experience.search_by_name_and_details(params[:query])
     else
       @experiences = Experience.all
     end
