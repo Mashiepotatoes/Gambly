@@ -1,0 +1,27 @@
+.exp-index-banner {
+  background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  position: relative;
+}
+
+.exp-index-logo {
+  width: 300px;
+}
+
+.container-index {
+  width: 460px;
+  margin: 0 auto;
+  position: absolute;
+  top: 170px;
+  left: 50px;
+}
+
+// ------- Media Queries -------- //
+
+@media only screen and (min-width: 800px) {
+  .exp-index-banner {
+    background-position: bottom;
+  }
+}
