@@ -1,7 +1,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .card-trip > img {
-  height: 250px;
+  height: 350px;
   width: 100%;
   object-fit: cover;
 }
@@ -45,6 +45,7 @@
   justify-content: center;
   padding: 8px;
   width: 20%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 // ------- For sample.html.erb ------- //
