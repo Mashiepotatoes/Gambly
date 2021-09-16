@@ -26,7 +26,7 @@
         <%= link_to experience_path(experience) do  %>
           <img src=<%= experience.photo_url%> class="experience-img">
           <div class="rounded-bottom p-3 d-flex flex-column background-white">
-            <strong><%= experience.name %> </strong>
+            <strong class="experience-name"><%= experience.name %></strong>
             <small class="text-muted"><%= experience.details %></small>
             <small class="text-muted"><%= experience.price %></small>
           </div>

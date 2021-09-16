@@ -27,6 +27,16 @@
   background-color: white;
 }
 
+.experience-name {
+  position: relative;
+  color: black;
+}
+
+.fa-heart {
+  color: red;
+  position: absolute;
+}
+
 // --------- Media queries ----------- //
 @media(max-width: 992px) {
   .cards {
