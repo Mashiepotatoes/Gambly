@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card-trip-s">
+    <img src=<%=@random_experience.photo_url%> />
+    <div class="card-trip-container">
+      <div class="card-trip-infos">
+        <h2><%= @random_experience.name.capitalize %></h2>
+        <p><%= @random_experience.details %></p>
+      </div>
+      <div class="card-trip-checkout">
+        <h3 class="card-trip-pricing float-right">$<%= @random_experience.price %></h3>
+        <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Go to experiences index", experiences_path, class: "#" %>
+  <%= link_to "Take another Gambly", sample_experiences_path, class: "#" %>
+</div>

@@ -15,4 +15,8 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
   end
+
+  def sample
+    @random_experience = Experience.all.sample
+  end
 end

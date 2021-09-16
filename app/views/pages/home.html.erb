@@ -20,16 +20,16 @@
   <div class="container-landing">
     <div class="mb-5">
       <%= image_tag(asset_path('logo-white.png'), {class: 'landing-logo'}) %>
-      <%= form_tag experiences_path, method: :get do %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find an experience"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= form_tag experiences_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control search-bar",
+              placeholder: "Find an experience"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary btn-submit" %>
       <% end %>
-      <%= link_to "Take a Gambly", experiences_path, class: "#" %>
-      <%= link_to "View all experiences", experiences_path, class: "#" %>
+      <%= link_to "Take a Gambly", sample_experiences_path, class: "btn-landing-routes" %>
+      <%= link_to "View all experiences", experiences_path, class: "btn-landing-routes" %>
     </div>
   </div>
 
