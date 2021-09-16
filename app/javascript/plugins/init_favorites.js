@@ -26,7 +26,7 @@ const initFavorites = () => {
       },
       body: JSON.stringify({data: "nothing really needed"}) // body data type must match "Content-Type" header
     }).then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => data)
     // Create a new favorite
     // - current user
     // - experience
