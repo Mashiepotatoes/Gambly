@@ -18,26 +18,41 @@
   </div>
 
   <div class="container-landing">
-    <div class="mb-5">
-      <%= image_tag(asset_path('logo-white.png'), {class: 'landing-logo'}) %>
-        <%= form_tag experiences_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-              params[:query],
-              class: "form-control search-bar",
-              placeholder: "Find an experience"
-          %>
-          <%= submit_tag "Search", class: "btn btn-primary btn-submit" %>
-      <% end %>
-      <%= link_to "Take a Gambly", sample_experiences_path, class: "btn-landing-routes" %>
-      <%= link_to "View all experiences", experiences_path, class: "btn-landing-routes" %>
+    <div class="landing-wrapper">
+
+      <div class="landing-img">
+        <%= image_tag(asset_path('logo-white.png')) %>
+      </div>
+
+      <div class="m-2">
+        <%= simple_form_for :experience, url: experiences_path, method: :get do |f| %>
+          <div class="search-form-control mt-3 ">
+            <input class="form-control required " type="text" name="query" id="query" />
+            <button name="button" type="submit" class="button-none" >
+              <i class="fas fa-search search-icon"></i>
+            </button>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="btn-wrapper row px-3">
+        <div class="text-center col-6 btn-border">
+            <%= link_to "Take a Gambly", experiences_path %>
+        </div>
+
+        <div class="text-center col-6 btn-border">
+          <%= link_to "View all experiences", experiences_path %>
+        </div>
+      </div>
+
     </div>
   </div>
 
 <!-- This is the form I want below -->
     <%# <div class="box">
-      <form name="search">
-        <input type="text" class="input" name="txt"
-        onmouseout="document.search.txt.value = ''">
+      <form name="search" action="/experiences" method="get">
+        <input type="text" class="input" name="query" id="query"
+        onmouseout="document.search.query.value = ''">
       </form>
       <i class="fas fa-search"></i>
     </div> %>
