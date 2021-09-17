@@ -1,0 +1,34 @@
+<!--------- banner --------->
+<div class="exp-index-banner">
+
+  <!------ banner/search bar ------>
+  <div class="container-index">
+    <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
+    <%= form_tag results_experiences_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an experience"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<h1>Results for... "<%= params[:query] %>"</h1>
+
+<!--------- cards ---------->
+<div class="container my-5">
+  <div class="cards">
+    <% @experiences.each do |experience| %>
+        <%= link_to experience_path(experience) do  %>
+          <img src=<%= experience.photo_url%> class="experience-img">
+          <div class="rounded-bottom p-3 d-flex flex-column background-white">
+            <strong><%= experience.name %> </strong>
+            <p> <%= experience.price  %> </p>
+            <small class="text-muted"> Book now for today </small>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

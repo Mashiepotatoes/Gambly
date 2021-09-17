@@ -1,11 +1,10 @@
 <!--------- banner --------->
 <div class="exp-index-banner">
 
-
   <!------ banner/search bar ------>
   <div class="container-index">
     <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
-    <%= form_tag experiences_path, method: :get do %>
+    <%= form_tag results_experiences_path, method: :get do %>
       <%= text_field_tag :query,
           params[:query],
           class: "form-control",
@@ -16,23 +15,19 @@
   </div>
 </div>
 
-<!------- filters ------->
-
-<div>
-
 <!--- dropdown list for location filter --->
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Filter by Location
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to "North", experiences_path, class: "dropdown-item" %>
-      <%= link_to "South", experiences_path, class: "dropdown-item" %>
-      <%= link_to "East", experiences_path, class: "dropdown-item" %>
-      <%= link_to "West", experiences_path, class: "dropdown-item" %>
-    </div>
-  </div>
+ <form action="/experiences/filter" method="get">
+  <label>Filter by Location</label><br>
+     <select name="filter">
+      <option>North</option>
+      <option>South</option>
+      <option>East</option>
+      <option>West</option>
+    </select>
+    <button>Submit</button>
+ </form>
 </div>
+
 <!--------- cards ---------->
 <div class="container my-5">
   <div class="cards">
@@ -41,9 +36,8 @@
           <img src=<%= experience.photo_url%> class="experience-img">
           <div class="rounded-bottom p-3 d-flex flex-column background-white">
             <strong><%= experience.name %> </strong>
-            <p> <%= experience.price  %> </p>
+            <p> <%= humanized_money_with_symbol(experience.price)  %> </p>
             <small class="text-muted"> Book now for today </small>
-
           </div>
         <% end %>
     <% end %>

@@ -25,7 +25,7 @@
       </div>
 
       <div class="card-trip-checkout">
-        <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
+        <h3 class="card-trip-pricing float-right"><%= humanized_money_with_symbol(@experience.price) %></h3>
         <%= form_tag orders_path do %>
           <%= hidden_field_tag 'experience_id', @experience.id %>
           <%= submit_tag 'Book now', class: 'btn btn-primary' %>

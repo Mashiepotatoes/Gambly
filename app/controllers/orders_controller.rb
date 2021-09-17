@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
       line_items: [{
         price_data: {
           currency: 'sgd',
-          unit_amount: (experience.price * 100).to_i,
+          unit_amount: experience.price_cents,
           product_data: {
             name: experience.name,
             images: [experience.photo_url]
@@ -20,7 +20,6 @@ class OrdersController < ApplicationController
       success_url: order_url(order),
       cancel_url: order_url(order)
     )
-
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
   end

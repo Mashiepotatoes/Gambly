@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :experiences, only: [:index, :show] do
     collection do
       get :sample
-    end
+      get :results
+      get :filter
+      end
     resources :favorites, only: [:new, :create]
   end
 
@@ -15,4 +17,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
