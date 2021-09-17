@@ -2,7 +2,6 @@
   position : relative;
   justify-content: space-between;
   background-color: $gambly-purple;
-
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,6 +9,23 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 60px;
+}
+
+.navbar-landing {
+  position : relative;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.navbar-landing .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-landing .navbar-brand img {
   position: absolute;
   top: 0;
   left: 20px;
