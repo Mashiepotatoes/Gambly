@@ -1,15 +1,15 @@
 <div class="container mt-5">
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
-    <% if user_signed_in? %>
-      <% if current_user.favorited?(@experience) %>
-      <div class="heart"><i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i></div>
-      <% else %>
-      <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
+    <div class="heart">
+      <%= link_to experience_favorites_path(@experience), method: :post do  %>
+        <% if current_user && current_user.favorited?(@experience) %>
+          <i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i>
+        <% else %>
+          <i data-experience-id=<%= @experience.id %> class="far fa-heart"></i>
+        <% end %>
       <% end %>
-    <% else %>
-      <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
-    <% end %>
+    </div>
 
     <div class="card-trip-container p-3">
       <div class="card-trip-infos">

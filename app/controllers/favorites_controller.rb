@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  # before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:create]
 
   def index
     @favorites = current_user.favorites
@@ -9,13 +9,12 @@ class FavoritesController < ApplicationController
   end
 
   def create
+    # if the user is not signed_in then you respond with a redirect
     @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.experience = Experience.find(params[:experience_id])
     if @favorite.save
-      respond_to do |format|
-        format.json { render json: { status: "favorite successfully created" } }
-      end
+      redirect_to @favorite.experience
     end
   end
 end
