@@ -16,6 +16,23 @@
   </div>
 </div>
 
+<!------- filters ------->
+
+<div>
+
+<!--- dropdown list for location filter --->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter by Location
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to "North", filter_by_location_experiences_path, class: "dropdown-item" %>
+      <%= link_to "South", filter_by_location_experiences_path, class: "dropdown-item" %>
+      <%= link_to "East", filter_by_location_experiences_path, class: "dropdown-item" %>
+      <%= link_to "West", filter_by_location_experiences_path, class: "dropdown-item" %>
+    </div>
+  </div>
+</div>
 <!--------- cards ---------->
 <div class="container my-5">
   <div class="cards">
