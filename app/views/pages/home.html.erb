@@ -1,21 +1,4 @@
 <div class="background">
-  <%# <div class="container">
-
-    <div class="input-group">
-    <div class="form-outline">
-      <input id="search-input" type="search" id="form1" class="form-control" />
-      <label class="form-label" for="form1">Search</label>
-    </div>
-    <button id="search-button" type="button" class="btn btn-primary">
-      <i class="fas fa-search"></i>
-    </button>
-
-  </div> %>
-
-  <div class="landing-btns-grp d-flex">
-    <%= link_to "Login", new_user_session_path, class: "landing-btn" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "landing-btn" %>
-  </div>
 
   <div class="container-landing">
     <div class="landing-wrapper">
@@ -36,24 +19,20 @@
       </div>
 
       <div class="btn-wrapper row px-3">
-        <div class="text-center col-6 btn-border">
-            <%= link_to "Take a Gambly", sample_experiences_path %>
+        <div class="col-6 ">
+          <div class="text-center btn-border">
+              <%= link_to "Take a Gambly", experiences_path %>
+          </div>
         </div>
 
-        <div class="text-center col-6 btn-border">
-          <%= link_to "View all experiences", experiences_path %>
+         <div class="col-6">
+          <div class="text-center btn-border">
+            <%= link_to "View all experiences", experiences_path %>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 
-<!-- This is the form I want below -->
-    <%# <div class="box">
-      <form name="search" action="/experiences" method="get">
-        <input type="text" class="input" name="query" id="query"
-        onmouseout="document.search.query.value = ''">
-      </form>
-      <i class="fas fa-search"></i>
-    </div> %>
 </div>

@@ -1,9 +1,14 @@
 // Specific CSS for your home-page
+.landing-body {
+  background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
+  background-repeat: no-repeat;
 
+  background-size: cover;
+}
 
 .container-landing {
   width: 35%;
-  // height: 300px;
+
   margin: 0 auto;
   position: absolute;
   top: 150px;
@@ -29,4 +34,8 @@
   width: 100px;
   background-color: $gambly-yellow;
   color: white;
+}
+
+.gambly-img{
+  width: 350px;
 }
