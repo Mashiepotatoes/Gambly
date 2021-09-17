@@ -25,6 +25,7 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @favorite = Favorite.find_by_experience_id(params[:id])
   end
 
   def sample

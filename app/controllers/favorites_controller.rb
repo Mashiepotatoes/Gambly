@@ -1,24 +1,24 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
   end
 
   def new
   end
 
   def create
+    # if the user is not signed_in then you respond with a redirect
     @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.experience = Experience.find(params[:experience_id])
-    if @favorite.save
-      respond_to do |format|
-        format.json { render json: { status: "favorite successfully created" } }
-      end
-    end
+    redirect_to @favorite.experience if @favorite.save
+  end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.user = current_user
+    redirect_to @favorite if @favorite.destroy
   end
 end
-
-# // how to check if favorite have been favorited?
-# // i have user_id, experience_id
-# // do favorite_id exist?
-# // if yes => favorited

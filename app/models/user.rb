@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :experiences, through: :user_experiences
   has_many :orders
 
-  def has_favorited?(given_exp)
+  def favorited?(given_exp)
     favorite_experiences.find do |exp|
       given_exp == exp
     end
