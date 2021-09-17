@@ -1,11 +1,32 @@
 // Specific CSS for your home-page
+
+
 .container-landing {
-  width: 460px;
+  width: 35%;
+  // height: 300px;
   margin: 0 auto;
   position: absolute;
-  top: 250px;
-  left: 120px;
+  top: 150px;
+  left: 100px;
 }
-.landing-logo {
-  height: 120px;
+
+.box {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.landing-wrapper{
+  position: relative;
+}
+
+.landing-img >img {
+  max-width: 100%;
+}
+
+.search-btn {
+  width: 100px;
+  background-color: $gambly-yellow;
+  color: white;
 }

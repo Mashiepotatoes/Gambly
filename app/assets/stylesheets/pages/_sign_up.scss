@@ -5,16 +5,24 @@
 
 .card-body{
   margin-top: 5px;
-
   padding : 25px;
   background-color: white;
 }
 
 .card-heading{
   height: 150px;
-  background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.65;
+  background-color: $gambly-purple;
+  // background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+
+}
+
+.landing-img-sm{
+  padding: 5rem;
+}
+
+.landing-img-sm > img{
+  width: 100%;
 }
