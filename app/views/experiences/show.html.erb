@@ -26,12 +26,45 @@
 
       <div class="card-trip-checkout">
         <h3 class="card-trip-pricing float-right"><%= humanized_money_with_symbol(@experience.price) %></h3>
-        <%= form_tag orders_path do %>
           <%= hidden_field_tag 'experience_id', @experience.id %>
-          <%= submit_tag 'Book now', class: 'btn btn-primary' %>
-        <% end %>
+          <button
+          class='btn btn-primary'
+          data-toggle="modal"
+          data-target="#exampleModal"
+          data-experience-name="<%= @experience.name %>"
+          data-experience-price="<%= @experience.price %>"
+          data-experience-id="<%= @experience.id %>">
+            Book now
+          </button>
       </div>
     </div>
     <%= link_to "Back", experiences_path%>
+  </div>
+</div>
+
+<%# Modal %>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-current-experience-id="nil">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Booking</h5>
+        <p class="text-muted modal-price">SGD</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="experience-name" class="col-form-label">Number of Pax:</label>
+            <input type="number" class="form-control" id="experience-pax">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-modal" data-dismiss="modal">Add to Cart</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>
