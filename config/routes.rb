@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:new, :create]
   end
 
-  resources :favorites, only: [:index]
+  resources :favorites, only: [:index, :destroy]
   resources :checkout, only: [:index, :create]
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

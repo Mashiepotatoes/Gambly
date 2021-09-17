@@ -2,13 +2,15 @@
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
     <div class="heart">
-      <%= link_to experience_favorites_path(@experience), method: :post do  %>
         <% if current_user && current_user.favorited?(@experience) %>
-          <i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i>
+          <%= link_to favorite_path(@favorite), method: :delete do  %>
+            <i class="fas fa-heart"></i>
+          <% end %>
         <% else %>
-          <i data-experience-id=<%= @experience.id %> class="far fa-heart"></i>
+          <%= link_to experience_favorites_path(@experience), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
         <% end %>
-      <% end %>
     </div>
 
     <div class="card-trip-container p-3">

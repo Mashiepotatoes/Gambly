@@ -13,8 +13,12 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.experience = Experience.find(params[:experience_id])
-    if @favorite.save
-      redirect_to @favorite.experience
-    end
+    redirect_to @favorite.experience if @favorite.save
+  end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.user = current_user
+    redirect_to @favorite if @favorite.destroy
   end
 end
