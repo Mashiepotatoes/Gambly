@@ -1,2 +1,7 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="container">
+  <h1><%= @experience.name %> </h1>
+  <%= simple_form_for [@experience, @review] do |f| %>
+    <%= f.input :content, placeholder: 'Review about the experience...' %>
+    <%= f.submit class: 'btn btn-flat btn-block' %>
+  <% end %>
+</div>
