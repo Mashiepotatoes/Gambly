@@ -1,11 +1,16 @@
 <div class="container mt-5">
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
-    <% if current_user.has_favorited?(@experience) %>
-    <div class="heart"><i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i></div>
+    <% if user_signed_in? %>
+      <% if current_user.favorited?(@experience) %>
+      <div class="heart"><i data-experience-id=<%= @experience.id %> class="fas fa-heart"></i></div>
+      <% else %>
+      <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
+      <% end %>
     <% else %>
-    <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
+      <div class="heart"><i data-experience-id=<%= @experience.id %> class="far fa-heart"></i></div>
     <% end %>
+
     <div class="card-trip-container p-3">
       <div class="card-trip-infos">
         <h2><%= @experience.name.capitalize %></h2>
@@ -16,6 +21,7 @@
         </div>
         <p><%= @experience.details %></p>
       </div>
+
       <div class="card-trip-checkout">
         <h3 class="card-trip-pricing float-right">$<%= @experience.price %></h3>
         <%= form_tag orders_path do %>
