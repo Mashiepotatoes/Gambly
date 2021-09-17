@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_09_17_072340) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_17_092149) do
+>>>>>>> faa8863 (update review/rating model and controller)
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,10 +71,20 @@ ActiveRecord::Schema.define(version: 2021_09_17_072340) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "experience_id", null: false
+    t.index ["experience_id"], name: "index_ratings_on_experience_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "experience_id", null: false
+    t.index ["experience_id"], name: "index_reviews_on_experience_id"
   end
 
   create_table "userexperiences", force: :cascade do |t|
@@ -103,6 +117,8 @@ ActiveRecord::Schema.define(version: 2021_09_17_072340) do
   add_foreign_key "orders", "users"
   add_foreign_key "questions", "experiences"
   add_foreign_key "questions", "users"
+  add_foreign_key "ratings", "experiences"
+  add_foreign_key "reviews", "experiences"
   add_foreign_key "userexperiences", "experiences"
   add_foreign_key "userexperiences", "users"
 end

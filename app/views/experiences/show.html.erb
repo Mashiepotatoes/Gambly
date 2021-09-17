@@ -38,6 +38,16 @@
           </button>
       </div>
     </div>
+    <div class="review-header d-flex">
+      <h3>Reviews</h3>
+      <%= link_to "Add a review", new_experience_review_path(@experience)%>
+    </div>
+    <div class="review-container">
+      <% @experience.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    </div>
+    <br>
     <%= link_to "Back", experiences_path%>
   </div>
 </div>

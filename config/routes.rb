@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -8,8 +10,11 @@ Rails.application.routes.draw do
       get :sample
       get :results
       get :filter
-      end
+    end
     resources :favorites, only: [:new, :create]
+    resources :ratings, only: [:new, :create]
+    resources :reviews, only: [:new, :create]
+
   end
 
   resources :favorites, only: [:index, :destroy]

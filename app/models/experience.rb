@@ -1,5 +1,6 @@
 class Experience < ApplicationRecord
   has_many :reviews
+  has_many :ratings
   has_many :user_experiences
   has_many :users, through: :user_experiences
   has_many :orders
