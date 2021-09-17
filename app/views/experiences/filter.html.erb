@@ -1,6 +1,7 @@
 <!--------- banner --------->
 <div class="exp-index-banner">
 
+
   <!------ banner/search bar ------>
   <div class="container-index">
     <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
@@ -15,18 +16,7 @@
   </div>
 </div>
 
-<!--- dropdown list for location filter --->
- <form action="/experiences/filter" method="get">
-  <label>Filter by Location</label><br>
-     <select name="filter">
-      <option>North</option>
-      <option>South</option>
-      <option>East</option>
-      <option>West</option>
-    </select>
-    <button>Submit</button>
- </form>
-</div>
+<h1>Filtering all activities in Singapore by location: <%= params[:filter] %></h1>
 
 <!--------- cards ---------->
 <div class="container my-5">
@@ -36,7 +26,7 @@
           <img src=<%= experience.photo_url%> class="experience-img">
           <div class="rounded-bottom p-3 d-flex flex-column background-white">
             <strong><%= experience.name %> </strong>
-            <p> <%= humanized_money_with_symbol(experience.price)  %> </p>
+            <p> <%= experience.price  %> </p>
             <small class="text-muted"> Book now for today </small>
           </div>
         <% end %>
