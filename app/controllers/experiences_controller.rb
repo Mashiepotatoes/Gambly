@@ -10,6 +10,17 @@ class ExperiencesController < ApplicationController
     else
       @experiences = Experience.all
     end
+
+    # case filter.lowercase
+    # when "North"
+    #   @filtered_locations = Experience.where(params[:location] == 'North')
+    # when "South"
+    #   @filtered_locations = Experience.where(params[:location] == 'South')
+    # when "East"
+    # @filtered_locations = Experience.where(params[:location] == 'East')
+    # when "West"
+    # @filtered_locations = Experience.where(params[:location] == 'West')
+    # end
   end
 
   def show
@@ -18,9 +29,5 @@ class ExperiencesController < ApplicationController
 
   def sample
     @random_experience = Experience.all.sample
-  end
-
-  def filter_by_location
-    @filtered_locations = Experience.where(params[:location])
   end
 end
