@@ -23,5 +23,7 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  get "/cart", to: "cart#show", as: :cart
+
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

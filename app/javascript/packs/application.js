@@ -27,9 +27,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initModal } from '../plugins/init_Modal';
+import { initCart } from '../plugins/init_Cart';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // initModal();
+  initModal();
+  initCart();
 });
