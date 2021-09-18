@@ -15,6 +15,9 @@ class User < ApplicationRecord
   has_many :experiences, through: :user_experiences
   has_many :orders
 
+  # reviews
+  has_many :reviews, dependent: :nullify
+
   def favorited?(given_exp)
     favorite_experiences.find do |exp|
       given_exp == exp
