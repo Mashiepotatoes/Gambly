@@ -29,7 +29,7 @@
         </div>
         <div class="experience-review-container">
           <% @experience.reviews.each do |review| %>
-            <p><%= review.content %></p>
+            <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y") %>)</em></p>
           <% end %>
         </div>
         <br>
