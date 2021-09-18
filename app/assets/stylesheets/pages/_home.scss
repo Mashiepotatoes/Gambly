@@ -2,7 +2,6 @@
 .landing-body {
   background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
   background-repeat: no-repeat;
-
   background-size: cover;
 }
 
@@ -35,14 +34,15 @@
   color: white;
 }
 
-// .background {
-//   background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   height: 100vh;
-
-// }
 
 .gambly-img{
   width: 350px;
+}
+
+.container-landing-small {
+  width: 30%;
+  margin: 0 auto;
+  position: absolute;
+  top: 120px;
+  left: 100px;
 }

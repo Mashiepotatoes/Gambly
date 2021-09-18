@@ -1,10 +1,16 @@
 .exp-index-banner {
-  background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 60vh;
-  position: relative;
+  // background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position:center bottom;
+  height: 530px;
+  // position: relative;
 }
+
+.exp-index-banner > img{
+  height: 100%;
+}
+
 
 .exp-index-logo {
   width: 300px;
@@ -18,6 +24,9 @@
   left: 50px;
 }
 
+.main-banner > img{
+  object-fit:cover;
+}
 // ------- Media Queries -------- //
 
 @media only screen and (min-width: 800px) {

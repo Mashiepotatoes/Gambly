@@ -1,17 +1,45 @@
 <!--------- banner --------->
 <div class="exp-index-banner">
+  <div class="main-banner h-100">
+
+      <%= image_tag(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'),style: "width:100%;height:100%") %>
+  </div>
 
   <!------ banner/search bar ------>
-  <div class="container-index">
-    <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
-    <%= form_tag results_experiences_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find an experience"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+  <div class="container-landing-small">
+    <div class="landing-wrapper">
+
+      <div class="landing-img">
+        <%= image_tag(asset_path('logo-white.png')) %>
+      </div>
+
+      <div class="m-2">
+        <%= simple_form_for :experience, url: experiences_path, method: :get do |f| %>
+          <div class="search-form-control mt-3 ">
+            <input class="form-control required " type="text" name="query" id="query" />
+            <button name="button" type="submit" class="button-none" >
+              <i class="fas fa-search search-icon"></i>
+            </button>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="btn-wrapper row px-3">
+        <div class="col-6 ">
+          <div class="text-center btn-border">
+              <%= link_to "Take a Gambly", experiences_path,class: "text-purple" %>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="text-center btn-border">
+            <%= link_to "View all experiences", experiences_path,class: "text-purple" %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -36,7 +64,7 @@
           <img src=<%= experience.photo_url%> class="experience-img">
           <div class="rounded-bottom p-3 d-flex flex-column background-white">
             <strong><%= experience.name %> </strong>
-            <p> <%= humanized_money_with_symbol(experience.price)  %> </p>
+            <p> <%= experience.price %> </p>
             <small class="text-muted"> Book now for today </small>
           </div>
         <% end %>
