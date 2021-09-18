@@ -12,10 +12,6 @@ const initModal = () => {
       modal.find('.modal-title').text(experienceName)
       modal.find('.modal-price').text('$' + experiencePrice)
       modal.attr('data-current-experience-id', experienceId)
-<<<<<<< HEAD
-=======
-      prefillInputs(modal, experienceId);
->>>>>>> e855def (able to update cart)
     })
     initAddToCart();
   }
@@ -37,7 +33,6 @@ const initAddToCart = () => {
   })
 }
 
-<<<<<<< HEAD
 const findExperienceInCart = (experienceOrder, orderArr) => {
   debugger
   return orderArr.find((element) => element.experienceId === experienceOrder);
@@ -65,65 +60,29 @@ const writeToLocalStorage = (experienceOrder) => {
   }
   // debugger
   console.log(window.localStorage.order);
-=======
-  const findExperienceInCart = (experienceOrder, orderArr) => {
-    return orderArr.find((element) => element.experienceId === experienceOrder);
-  }
 
-  const writeToLocalStorage = (experienceOrder) => {
-    // if we do have a key for storing our items
-    // add the experience order directly to it
-    if (window.localStorage.order) {
-      const orderArr = JSON.parse(window.localStorage.order);
-      const experienceInCart = findExperienceInCart(experienceOrder.experienceId, orderArr);
-      // if the experienceOrder.id is in the order
-      if (experienceInCart) {
-        // then update
-        experienceInCart.amount = experienceOrder.amount;
-        window.localStorage.order = JSON.stringify(orderArr);
-      } else {
-        const orderArr = JSON.parse(window.localStorage.order);
-        orderArr.push(experienceOrder);
-        window.localStorage.order = JSON.stringify(orderArr);
-      }
+const writeToLocalStorage = (experienceOrder) => {
+  // if we do have a key for storing our items
+  // add the experience order directly to it
+  if (window.localStorage.order) {
+    const orderArr = JSON.parse(window.localStorage.order);
+    const experienceInCart = findExperienceInCart(experienceOrder.experienceId, orderArr);
+    // if the experienceOrder.id is in the order
+    if (experienceInCart) {
+      // then update
+      experienceInCart.amount = experienceOrder.amount;
+      window.localStorage.order = JSON.stringify(orderArr);
     } else {
-      window.localStorage.order = JSON.stringify([experienceOrder])
-      // if we dont have it, start it and add the item
+      const orderArr = JSON.parse(window.localStorage.order);
+      orderArr.push(experienceOrder);
+      window.localStorage.order = JSON.stringify(orderArr);
     }
-    // debugger
-    console.log(window.localStorage.order);
-
+  } else {
+    window.localStorage.order = JSON.stringify([experienceOrder])
+    // if we dont have it, start it and add the item
   }
->>>>>>> e855def (able to update cart)
 
-  //when i click on it
-
-  // get the id from the modal div - current experience
-  // get the amt from the form
-
-  // write to local storage
-<<<<<<< HEAD
+  console.log(window.localStorage.order);
 }
 
-
-
-=======
-
-  const prefillInputs = (modal, experienceId) => {
-    if (window.localStorage.order) {
-      const orderArr = JSON.parse(window.localStorage.order);
-      const experienceInCart = findExperienceInCart(experienceId.toString(), orderArr);
-      if (experienceInCart) {
-        modal.find('#experience-pax').val(experienceInCart.amount)
-      } else {
-        modal.find('#experience-pax').val('')
-      }
-    }
-  }
-    // if the experienceid is in the localstorage
-    // update the modal inputs with the content
-    // otherwise
-    // the inputs should be empty
-
->>>>>>> e855def (able to update cart)
 export { initModal }

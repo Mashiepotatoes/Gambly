@@ -19,6 +19,8 @@
           <%= link_to "My Cart", cart_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown ml-3 list-style-none">
+        <%</li>
+        <li class="nav-item dropdown ml-3">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
