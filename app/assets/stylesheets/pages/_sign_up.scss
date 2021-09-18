@@ -1,21 +1,54 @@
+.p-main{
+  margin: 0 auto;
+  min-height:100vh;
+}
+
+.main-content{
+  padding:50px 80px;
+  height: 100%;
+}
+
+.setting_main-content{
+  display:  grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-column-gap: 16px;
+  column-gap: 16px;
+}
+
+.side-panel{
+  grid-column: 1/4;
+  padding :16px 0 0 0;
+  margin-bottom: 0;
+  background-color: white;
+}
+
+.side-panel>li{
+  display: list-item;
+  padding: 15px 25px;
+}
+
+.side-panel>li>a{
+  font-size: 1rem;
+  color:#666;
+}
+
+.side-panel>li>a:hover {
+ text-decoration: none;
+}
+
 .card-wrapper{
   width: 550px;
   border-radius: 8px;
 }
 
-.card-body{
-  margin-top: 5px;
-  padding : 25px;
+.account-info{
+  grid-column: 4/-1;
+  padding: 24px 32px;
   background-color: white;
 }
 
-.card-heading{
-  height: 150px;
-  background-color: $gambly-purple;
-  // background-image: url(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'));
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
+.acc-font-size{
+  font-size: 1.5rem;
 }
 
 .landing-img-sm{
