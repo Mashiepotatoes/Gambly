@@ -27,8 +27,7 @@
 
           <% if user_signed_in? %>
             <li class="nav-item active ">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-white" %>
-              <%# <%= link_to "Home", root_path, class: "nav-link text-white" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-login-btn nav-link px-4" %>
             </li>
 
             <li class="nav-item dropdown ml-3">
@@ -41,7 +40,7 @@
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "btn-yellow nav-link text-white px-4" %>
+              <%= link_to "Login", new_user_session_path, class: "navbar-login-btn nav-link px-3" %>
             </li>
           <% end %>
         </ul>
