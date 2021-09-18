@@ -1,10 +1,10 @@
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
-}
+// .btn-flat {
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 4px;
+//   background: #1EDD88;
+//   transition: background 0.3s ease;
+// }
 
 .btn-purple {
   border-radius: 5rem;
@@ -14,36 +14,70 @@
   color: white;
 }
 
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-left: 8px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+
 .btn-yellow, .btn-landing-routes {
   border: solid 1px $gambly-yellow;
   border-radius: 10px;
   padding: 5px 15px;
+  background-color: transparent;
+}
+
+.btn-border{
+  border-radius: 10px;
+  border : 3px solid $gambly-yellow;
+  padding: 8px 0;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
+}
+
+// landing page navbar log in/out btn
+.navbar-login-btn{
+  border: solid 3px $gambly-yellow;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white !important;
+}
+
+.navbar-login-btn:hover ,.btn-border:hover ,.btn-yellow:hover{
+  background-color: rgba(38, 38, 38, 0.75);
   text-decoration: none;
-
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
-  color: white;
+.navbar-login-btn > a:hover {
+  color: black !important;
 }
 
-.btn-width{
-  width: 200px;
-}
+// .btn-width{
+//   width: 200px;
+// }
 // -------- landing page buttons ------- //
 
-.btn-landing-routes {
-  background-color: transparent;
-  border-radius: 10px;
-  margin-top: 10px;
-}
+// .btn-landing-routes {
+//   background-color: transparent;
+//   border-radius: 10px;
+//   margin-top: 10px;
+// }
 
-.btn-landing-routes:hover {
-  text-decoration: none;
-  background-color: $gambly-yellow;
-  color:white;
-  text-transform: scale(1.2);
-}
+// .btn-landing-routes:hover {
+//   text-decoration: none;
+//   background-color: $gambly-yellow;
+//   color:white;
+//   text-transform: scale(1.2);
+// }
 
 .landing-btns-grp {
   position: absolute;
@@ -59,25 +93,23 @@
 
 .landing-btn:hover {
   text-decoration: none;
-  color: white;
+  color: black;
   transform: scale(1.1);
 }
 
-.btn-submit {
-  border-radius: 10px;
-  margin-left: 5px;
-}
-
+// .btn-submit {
+//   border-radius: 10px;
+//   margin-left: 5px;
+// }
 
 .button-none{
   border :0px;
   background-color :transparent;
-
 }
 
 .btn-border{
   border-radius: 10px;
   border : 3px solid $gambly-yellow;
   padding: 8px 0;
-   box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
+  box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
 }

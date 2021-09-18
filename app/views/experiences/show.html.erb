@@ -22,6 +22,18 @@
           <% end %>
         </div>
         <p><%= @experience.details %></p>
+        <br>
+        <div class="experience-review-header">
+          <h2>Reviews</h2>
+          <%= link_to "Add a review", new_experience_review_path(@experience), class: 'btn btn-ghost' %>
+        </div>
+        <div class="experience-review-container">
+          <% @experience.reviews.each do |review| %>
+            <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y") %>)</em></p>
+          <% end %>
+        </div>
+        <br>
+        <%= link_to "Back", experiences_path, class: 'btn btn-primary' %>
       </div>
 
       <div class="card-trip-checkout">
@@ -38,17 +50,7 @@
           </button>
       </div>
     </div>
-    <div class="review-header d-flex">
-      <h3>Reviews</h3>
-      <%= link_to "Add a review", new_experience_review_path(@experience)%>
-    </div>
-    <div class="review-container">
-      <% @experience.reviews.each do |review| %>
-        <p><%= review.content %></p>
-      <% end %>
-    </div>
     <br>
-    <%= link_to "Back", experiences_path%>
   </div>
 </div>
 
