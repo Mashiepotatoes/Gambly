@@ -23,6 +23,13 @@
   padding: 0 30px;
 }
 
+.outer-card{
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-gap: 16px;
+  padding: 0 30px;
+}
+
 .background-white{
   background-color: white;
 }

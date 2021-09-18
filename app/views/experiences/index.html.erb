@@ -16,6 +16,7 @@
       <div class="m-2">
         <%= simple_form_for :experience, url: experiences_path, method: :get do |f| %>
           <div class="search-form-control mt-3 ">
+
             <input class="form-control required " type="text" name="query" id="query" />
             <button name="button" type="submit" class="button-none" >
               <i class="fas fa-search search-icon"></i>
@@ -43,31 +44,58 @@
   </div>
 </div>
 
+<div class="outer-card">
 <!--- dropdown list for location filter --->
- <form action="/experiences/filter" method="get">
-  <label>Filter by Location</label><br>
-     <select name="filter">
-      <option>North</option>
-      <option>South</option>
-      <option>East</option>
-      <option>West</option>
-    </select>
-    <button>Submit</button>
- </form>
-</div>
+  <div class="container my-5">
+    <%# <form action="/experiences/filter" method="get">
+      <strong><label>Location</label><strong><hr>
+        <select name="filter">
+          <option>North</option>
+          <option>South</option>
+          <option>East</option>
+          <option>West</option>
+        </select>
+        <button>Submit</button>
+    </form> %>
+
+  <form action="/experiences/filter" method="get">
+    <strong><label>Location</label><strong><hr>
+      <label class="container">North
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">South
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">East
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">West
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+
+      <button>Submit</button>
+
+    </form>
+  </div>
 
 <!--------- cards ---------->
-<div class="container my-5">
-  <div class="cards">
-    <% @experiences.each do |experience| %>
-        <%= link_to experience_path(experience) do  %>
-          <img src=<%= experience.photo_url%> class="experience-img">
-          <div class="rounded-bottom p-3 d-flex flex-column background-white">
-            <strong><%= experience.name %> </strong>
-            <p> <%= experience.price %> </p>
-            <small class="text-muted"> Book now for today </small>
-          </div>
-        <% end %>
-    <% end %>
+  <div class="container my-5">
+    <div class="cards">
+      <% @experiences.each do |experience| %>
+          <%= link_to experience_path(experience) do  %>
+            <img src=<%= experience.photo_url%> class="experience-img">
+            <div class="rounded-bottom p-3 d-flex flex-column background-white">
+              <strong><%= experience.name %> </strong>
+              <p> <%= experience.price %> </p>
+              <small class="text-muted"> Book now for today </small>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
