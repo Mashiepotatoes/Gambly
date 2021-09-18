@@ -1,5 +1,4 @@
 .navbar-lewagon {
-  position : relative;
   justify-content: space-between;
   background-color: $gambly-purple;
 }
@@ -30,4 +29,9 @@
   top: 0;
   left: 20px;
   width: 60px;
+}
+
+// remove ul bullet //
+.list-style-none{
+  list-style-type: none;
 }

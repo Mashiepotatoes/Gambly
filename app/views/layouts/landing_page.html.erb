@@ -27,7 +27,7 @@
 
           <% if user_signed_in? %>
             <li class="nav-item active ">
-              <%= link_to "Home", root_path, class: "nav-link text-white" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-login-btn nav-link px-4" %>
             </li>
 
             <li class="nav-item dropdown ml-3">
@@ -36,12 +36,11 @@
                 <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "My Favorites", favorites_path, class: "dropdown-item" %>
                 <%= link_to "My Past Experiences", "#", class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "btn-yellow nav-link text-white px-4" %>
+              <%= link_to "Login", new_user_session_path, class: "navbar-login-btn nav-link px-3" %>
             </li>
           <% end %>
         </ul>
@@ -49,6 +48,6 @@
     </div>
 
 <%# =================Landing page navbar  ====================== %>
-    <%= yield %>
-  </body>
+      <%= yield %>
+    </body>
 </html>
