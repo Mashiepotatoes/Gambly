@@ -1,3 +1,67 @@
-sample-body {
-  
+.sample-background{
+  background-color: $gambly-purple;
+  height: 100vh;
+  width: 100%;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+.card-container{
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+  // height: 400px;
+}
+
+#sample-page-img{
+  width: 400px;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.random-exp-card-details{
+  padding:20px;
+}
+
+.container--full-height{
+  height: 100vh;
+  width: 1000px;
+  min-width: 1200px;
+  overflow: hidden;
+}
+
+.card-para {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  height: 200px;
+  font-size: 14px;
+}
+
+#sample-header {
+  font-family:'Chelsea Market', cursive;
+  color: $gambly-yellow;
+  margin-bottom: 60px;
+}
+
+#loader-die {
+  width: 100px;
+}
+
+#gambly-result{
+  display:none;
+}
+
+.rotate {
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

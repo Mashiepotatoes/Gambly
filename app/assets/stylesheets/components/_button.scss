@@ -67,7 +67,7 @@
 }
 
 
-// landing page navbar log in/out btn
+// ---- landing page navbar log in/out btn ------//
 .navbar-login-btn{
   color: white !important;
 }
@@ -162,4 +162,29 @@ a.landing-btn-main{
 
 .text-purple:hover{
   text-decoration: none;
+}
+
+// ------ Sample page ------ //
+
+.sample-details-btn {
+  text-decoration: none;
+  color: $gambly-yellow;
+  padding: 16px 32px;
+  background-color: $gambly-purple;
+  border-radius: 10px;
+}
+
+.sample-details-btn:hover{
+  background-color: $gambly-yellow;
+  color: $gambly-purple;
+  text-decoration: none;
+}
+
+#sample-details-btn-container:hover{
+  transform: scale(1.05);
+}
+
+.btn-wrapper-sample{
+  margin-top: 60px;
+  width: 100%;
 }
