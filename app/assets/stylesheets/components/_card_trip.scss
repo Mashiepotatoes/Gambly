@@ -1,12 +1,12 @@
 .card-trip {
   overflow: hidden;
-  background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
 }
 
 .card-trip-container {
-  display: flex;
+  background-color: white;
+  padding:0 2rem,
 }
 
 .card-trip > img {
@@ -21,6 +21,10 @@
   margin: 8px;
 }
 
+.card-trip h3{
+  font-size: 24px;
+  margin: 8px;
+}
 
 .card-trip p {
   font-size: 16px;
@@ -29,23 +33,53 @@
 }
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  width: 80%;
+  width: 75%;
+}
+
+// terms and conditions card//
+
+.small-card-trip-container{
+  margin-top: 1.5rem;
+  background-color: white;
+  padding: 2rem 4.5rem;
+}
+
+.term-text{
+  margin: 10px 7px;
+}
+
+.term-details{
+  margin: 1.5rem 0;
+}
+
+//------ check-out ------//
+.checkout-card{
+  border-radius: 10px;
+  padding: 2.5rem 1.4rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-trip-checkout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  width: 20%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 2rem 0;
+  width: 25%;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.cancellation{
+  padding: 1rem 1rem;
+  background: #f1ebe5;
+  border-radius: 10px;
+}
+
+.book-now-btn{
+  background: $gambly-yellow;
+  border-radius: 10px;
 }
 
 // ------- For sample.html.erb ------- //

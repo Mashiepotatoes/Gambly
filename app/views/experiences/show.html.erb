@@ -1,83 +1,136 @@
 <div class="container mt-5">
+
   <div class="card-trip">
     <img src=<%=@experience.photo_url%> />
-    <div class="heart">
-        <% if current_user && current_user.favorited?(@experience) %>
-          <%= link_to favorite_path(@favorite), method: :delete do  %>
-            <i class="fas fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to experience_favorites_path(@experience), method: :post do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
-    </div>
+    <%# beginning of card-trip %>
+    <div class="card-trip-container d-flex">
 
-    <div class="card-trip-container p-3">
       <div class="card-trip-infos">
-        <h2><%= @experience.name.capitalize %></h2>
-        <div class="experience-details">
-          <% @experience.details.split('@').each do |detail| %>
-            <p>• <%= detail %></p>
-          <% end %>
-        </div>
-        <p><%= @experience.details %></p>
-        <br>
+        <div><h2><%= @experience.name.capitalize %></h2></div>
 
-        <!-- Reviews -->
-        <div class="experience-review-header">
-          <h2>Reviews</h2>
-          <%= link_to "Add a review", new_experience_review_path(@experience), class: 'btn btn-ghost' %>
-        </div>
-        <h5>Average user rating: <%= @average_rating %>
-          <% if @all_reviews.count == 1 %>
-            (1 review)
-          <% else %>
-            (<%= @all_reviews.count %> reviews)
-          <% end %>
-        </h5>
-        <!-- each review -->
-        <div class="experience-review-container">
-          <% @experience.reviews.each do |review| %>
-            <span>Rating: <%= review.rating %></span>
+        <div class="wishlist  d-flex justify-content-center align-items-center">
+          <div class="heart-container text-center">
 
-            <!-- this is for filled stars -->
-            <% review.rating.to_i.times do |i| %> 
-            <span>
-              <i class="fas fa-star"></i>
-            </span>
+            <% if current_user && current_user.favorited?(@experience) %>
+              <%= link_to favorite_path(@favorite), method: :delete do  %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to experience_favorites_path(@experience), method: :post do %>
+                <i class="far fa-heart"></i>
+              <% end %>
             <% end %>
+          </div>
 
-            <!-- delete btn -->
-            <%= link_to "Delete this review", experience_review_path(@experience, review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %>
-            <!-- update review btn -->
-            <%= link_to "Update this review", edit_experience_review_path(@experience) %>
-
-            <!-- review content -->
-            <h4><%= review.title %></h4>
-            <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y by #{review.user[:username]}") %>)</em></p>
-          <% end %>
+          <p class="p-0">Add to wishlist</p>
         </div>
-        <br>
-        <%= link_to "Back", experiences_path, class: 'btn btn-primary' %>
+
+
+        <div class="experience-details mt-3">
+          <h3>Hightlights</h3>
+          <div class="highlight-details mt-3">
+            <ul>
+            <% @experience.details.split('@').each do |detail| %>
+              <li class="mb-4"> <%= detail %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div class="card-trip-checkout">
-        <h3 class="card-trip-pricing float-right"><%= humanized_money_with_symbol(@experience.price) %></h3>
-          <%= hidden_field_tag 'experience_id', @experience.id %>
-          <button
-          class='btn btn-primary'
-          data-toggle="modal"
-          data-target="#exampleModal"
-          data-experience-name="<%= @experience.name %>"
-          data-experience-price="<%= @experience.price %>"
-          data-experience-id="<%= @experience.id %>">
-            Book now
-          </button>
+
+        <div class="checkout-card text-center ">
+          <div>
+            <h3 class="card-trip-pricing"><%= humanized_money_with_symbol(@experience.price) %></h3>
+            <%= hidden_field_tag 'experience_id', @experience.id %>
+          </div>
+
+          <div class="cancellation text-left mt-4">
+            <p><span><i class="fas fa-bolt mr-2"></span></i>Flash deal !!</p>
+            <p><span><i class="fas fa-ban mr-2"></span></i>Free cancellation</p>
+          </div>
+
+          <div class="mt-4 book-now-btn">
+            <button
+              class='btn'
+              data-toggle="modal"
+              data-target="#exampleModal"
+              data-experience-name="<%= @experience.name %>"
+              data-experience-price="<%= @experience.price %>"
+              data-experience-id="<%= @experience.id %>">
+              Book now
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="small-card-trip-container">
+      <h3>Terms and Conditions</h3>
+      <div class="term-text">
+        <div class="term-details">
+          <strong><p>Booking Confirmation</p></strong>
+          <p>Your booking will be confirmed by the provider within 24 hours.</p>
+        </div>
+
+        <div class="term-details">
+          <strong><p>Refund/Cancellation Policy</p></strong>
+          <p>A full refund will be processed if cancelled before the date of selection.</p>
+        </div>
+
+        <div class="term-details">
+          <strong><p>Advanced Booking</p></strong>
+          <p>Please book at least 24 hours prior to your date of selection to guarantee your booking.</p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Reviews -->
+  <div class="small-card-trip-container">
+
+      <h3>Reviews</h3>
+
+    <p>Average user rating: <%= @average_rating %>
+      <% if @all_reviews.count == 1 %>
+        (1 review)
+      <% else %>
+        (<%= @all_reviews.count %> reviews)
+      <% end %>
+    </p>
+
+    <div class="review-btn my-4">
+      <%= link_to "Add a review", new_experience_review_path(@experience), class: 'btn btn-ghost' %>
+    </div>
+
+        <!-- each review -->
+    <div class="experience-review-container">
+      <% @experience.reviews.each do |review| %>
+        <span>Rating: <%= review.rating %></span>
+
+        <!-- this is for filled stars -->
+        <% review.rating.to_i.times do |i| %>
+        <span>
+          <i class="fas fa-star"></i>
+        </span>
+        <% end %>
+
+            <!-- delete btn -->
+        <%= link_to "Delete this review", experience_review_path(@experience, review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %>
+        <!-- update review btn -->
+        <%= link_to "Update this review", edit_experience_review_path(@experience) %>
+
+        <!-- review content -->
+        <h4><%= review.title %></h4>
+        <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y by #{review.user[:username]}") %>)</em></p>
+      <% end %>
+    </div>
     <br>
+    <%= link_to "Back", experiences_path, class: 'btn btn-yellow' %>
   </div>
+
+  </div>
+</div>
 </div>
 
 <%# Modal %>
@@ -86,7 +139,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Booking</h5>
-        <p class="text-muted modal-price">SGD</p>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -99,9 +152,16 @@
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-modal" data-dismiss="modal">Add to Cart</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="modal-footer d-flex justify-content-between">
+        <div class="total-price d-flex">
+          <h2>Total : </h2>
+          <h2 class="text-muted modal-price mx-3"> SGD </h2>
+        </div>
+
+        <div class="payment-btn-group">
+          <button type="button" class="btn btn-primary btn-modal" data-dismiss="modal">Add to Cart</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
