@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   get "/cart", to: "cart#show", as: :cart
+  post "/cart_info", to: "cart#cart_info", as: :cart_info
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

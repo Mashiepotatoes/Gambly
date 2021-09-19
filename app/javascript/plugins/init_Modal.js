@@ -59,7 +59,7 @@ const writeToLocalStorage = (experienceOrder) => {
     // if we dont have it, start it and add the item
   }
   // debugger
-  console.log(window.localStorage.order);
+  window.localStorage.order;
 
   //when i click on it
 

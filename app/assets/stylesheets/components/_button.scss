@@ -36,6 +36,15 @@
   border: none;
 }
 
+.btn-flat {
+  color: white;
+  padding: 6px 20px;
+  border-radius: 4px;
+  margin: 6px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
 .btn-border{
   border-radius: 10px;
   color: black;
