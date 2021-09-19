@@ -17,7 +17,7 @@ const initCart = () => {
       }).then(res => res.json())
         .then(data => {
           renderCartItems(data, cart)
-          activateSubmitBtn(cart);
+          // activateSubmitBtn(cart);
       });
     } else {
       noItems.classList.remove('d-none');
@@ -31,27 +31,27 @@ const renderCartItems = (data, cart) => {
     cartItems.innerHTML += `
     <p>${item.experienceName} - Price: ${item.experiencePrice}</p>`
   })
-  cartItems.insertAdjacentHTML('beforeend', `<p> Total: ${data.total} <p>`)
+  cartItems.insertAdjacentHTML('beforeend', `<p> Total: ${data.total} </p>`)
 }
 
-const activateSubmitBtn = (cart) => {
-  const submitBtn = cart.querySelector('.btn-primary');
-  submitBtn.addEventListener('click', () => {
-  fetch('/orders', {
-      method: 'POST',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "X-CSRF-Token": csrfToken()
-      },
-      body: window.localStorage.order
-    }).then(res => {
-      if (res.status === 200) {
-        window.localStorage.clear();
-        window.location.href = '/success';
-      }
-    })
-  })
-}
+// const activateSubmitBtn = (cart) => {
+//   const submitBtn = cart.querySelector('.btn-primary');
+//   submitBtn.addEventListener('click', () => {
+//   fetch('/orders', {
+//       method: 'POST',
+//       headers: {
+//         "Accept": "application/json",
+//         "Content-Type": "application/json",
+//         "X-CSRF-Token": csrfToken()
+//       },
+//       body: window.localStorage.order
+//     }).then(res => {
+//       if (res.status === 200) {
+//         window.localStorage.clear();
+//         window.location.href = '/success';
+//       }
+//     })
+//   })
+// }
 
 export { initCart }
