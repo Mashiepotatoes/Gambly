@@ -1,17 +1,55 @@
-<div class="container">
-  <div class="card-trip-s">
-    <img src=<%=@random_experience.photo_url%> />
-    <div class="card-trip-container">
-      <div class="card-trip-infos">
-        <h2><%= @random_experience.name.capitalize %></h2>
-        <p><%= @random_experience.details %></p>
-      </div>
-      <div class="card-trip-checkout">
-        <h3 class="card-trip-pricing float-right">$<%= @random_experience.price %></h3>
-        <%= link_to 'Book now', checkout_index_path, class:"btn btn-flat float-right" %>
+<div class="sample-background">
+  <div id="loader-die-page">
+    <div class="container container--full-height d-flex justify-content-center align-items-center flex-column">
+      <div class="row d-block">
+        <div>
+          <h1 id="sample-header" class="text-center">Rolling for your next greatest experience...</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+          <%= image_tag("gambly-die.png", id:"loader-die", class: "rotate") %>
+        </div>
       </div>
     </div>
   </div>
-  <%= link_to "Go to experiences index", experiences_path, class: "#" %>
-  <%= link_to "Take another Gambly", sample_experiences_path, class: "#" %>
+  
+  <div id="gambly-result">
+    <div class="container container--full-height d-flex align-items-center justify-content-center" >
+      <div >
+        <div class="row">
+        <h1 id="sample-header">Your next great experience is...</h1>
+          <div class="card-container d-flex">
+            <div>
+              <img src=<%=@random_experience.photo_url%> id="sample-page-img"/>
+            </div>
+            <div class="random-exp-card-details">
+              <h1><%= @random_experience.name.capitalize %></h1>
+              <h5><em>Average rating: <%= @random_experience.rating %></em><h5>
+              <div class="py-3 card-para">
+                <p><%= @random_experience.details %></p>
+              </div>
+            <div class="price-and-more-details-btn d-flex justify-content-around align-items-center">
+              <div class="text-center">
+                <h3>$<%= @random_experience.price %></h3>
+              </div>
+              <div class="text-center">
+                <div id="sample-details-btn-container">
+                  <%= link_to 'See more details', experience_path(@random_experience), class:"sample-details-btn" %>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          <!--- buttons --->
+          <div class="btn-wrapper d-flex justify-content-around btn-wrapper-sample">
+            <div class="landing-btn-div">
+              <%= link_to "Take another Gambly", sample_experiences_path, class:"landing-btn-main" %>
+            </div>
+            <div class="landing-btn-div">
+              <%= link_to "View all experiences", experiences_path, class:"landing-btn-main" %>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
