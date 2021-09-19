@@ -1,46 +1,59 @@
-<div class="container p-0 mt-5 card-wrapper">
-  <div class="sign-up-card">
+<div class="p-main">
+  <div class="main-content setting_main-content">
 
-    <div class="card-heading d-flex justify-content-center align-items-center">
-      <div class="landing-img-sm">
-        <%= image_tag(asset_path('logo-yellow.png')) %>
+    <ul class="side-panel list-style-none">
+      <li >
+        <%= link_to edit_user_registration_path do %>
+          <i class="far fa-user mr-3 text-decoration-none"></i> Profile
+        <% end %>
+      </li>
+
+      <li >
+        <%= link_to edit_user_registration_path do %>
+          <i class="far fa-calendar mr-3"></i> Bookings
+        <% end %>
+      </li>
+      <li>
+        <%= link_to edit_user_registration_path do %>
+          <i class="far fa-bookmark mr-3"></i> WishList
+        <% end %>
+      </li>
+      <li>
+        <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
+          <i class="fas fa-user-alt-slash mr-3"></i>Cancel my account
+        <% end %>
+      </li>
+    </ul>
+
+    <div class="account-info">
+      <div class="card-body">
+        <div class="acc-font-size"><p>Account information </p></div>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+
+            <%= f.input :username, required: true, autofocus: true %>
+
+            <%= f.input :email, required: true, autofocus: true %>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% end %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Save",class: "btn-purple mt-3" %>
+          </div>
+
+        <% end %>
+
+
+  <%#
+        <%= render "devise/shared/links" %>
       </div>
-    </div>
 
-    <div class="card-body">
-      <h2>Edit your profile </h2>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-
-          <%= f.input :username, required: true, autofocus: true %>
-
-          <%= f.input :email, required: true, autofocus: true %>
-
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-          <% end %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Update",class: "btn-purple" %>
-        </div>
-
-      <% end %>
-
-      <div class="mt-4">
-
-        <h3>Cancel my account</h3>
-
-        <p class="text-muted">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-        <%= link_to "Back", :back %>
-
-      </div>
-<%#
-      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

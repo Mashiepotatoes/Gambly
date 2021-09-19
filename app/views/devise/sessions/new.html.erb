@@ -1,7 +1,7 @@
-<div class="container ">
-  <div class="row justify-content-center align-items-center mt-5">
+<div class="container login-container ">
+  <div class="login-form row justify-content-center align-items-center mt-5">
     <div class="col-md-12 col-lg-10 ">
-      <div class="wrap d-md-flex rounded">
+      <div class="wrap d-md-flex shadowed" >
 
         <div class="w-50 p-5" style="background-color:#FFFFFF">
           <h2>Sign In</h2>
@@ -36,7 +36,7 @@
               <%= image_tag(asset_path('logo-yellow.png'),{class:"gambly-img w-100"}) %>
             </div>
             <div>
-              <%= link_to "Sign up", new_registration_path(resource_name), class:"text-decoration-none btn-yellow" %>
+              <%= link_to "Sign up", new_registration_path(resource_name), class:"text-decoration-none px-4 py-2 text-purple btn-yellow" %>
             </div>
           </div>
         </div>

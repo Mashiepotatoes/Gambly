@@ -1,7 +1,11 @@
 <div class="container">
   <h1><%= @experience.name %> </h1>
   <%= simple_form_for [@experience, @review] do |f| %>
-    <%= f.input :content, placeholder: 'Review about the experience...' %>
+    <%= f.input :title, placeholder: 'Please write a title for this review' %>
+    <%= f.input :content, placeholder: 'Please review the experience' %>
+    <%= f.input :rating, collection: (1..5).to_a, label: 'Please rate the experience from 1 to 5' %>
     <%= f.submit class: 'btn btn-flat btn-block' %>
   <% end %>
+
+  <% console %>
 </div>

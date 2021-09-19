@@ -6,6 +6,8 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @favorite = Favorite.find_by_experience_id(params[:id])
+    @average_rating = average_rating
+    @all_reviews = Review.all
   end
 
   def sample
@@ -32,7 +34,7 @@ class ExperiencesController < ApplicationController
   end
 
   private
-  
+
   def filter_by_location(location)
     case location
     when 'North'
@@ -49,5 +51,12 @@ class ExperiencesController < ApplicationController
   def filter_by_location_dir(direction)
     # Experience.find_by_location!(direction)
     Experience.where(location: direction)
+  end
+
+  def average_rating
+    @experience = Experience.find(params[:id])
+    @reviews = Review.where(experience_id: @experience.id)
+    all_ratings = @reviews.map { |review| review.rating.to_i }
+    avg_rating = ( all_ratings.sum.to_f / all_ratings.count ).round(1)
   end
 end

@@ -61,6 +61,7 @@ const writeToLocalStorage = (experienceOrder) => {
   // debugger
   console.log(window.localStorage.order);
 
+<<<<<<< HEAD
 const writeToLocalStorage = (experienceOrder) => {
   // if we do have a key for storing our items
   // add the experience order directly to it
@@ -85,4 +86,16 @@ const writeToLocalStorage = (experienceOrder) => {
   console.log(window.localStorage.order);
 }
 
+=======
+  //when i click on it
+
+  // get the id from the modal div - current experience
+  // get the amt from the form
+
+  // write to local storage
+}
+
+
+
+>>>>>>> 85347eebc9b79e5fa8be36e49f9a3edde1e58899
 export { initModal }

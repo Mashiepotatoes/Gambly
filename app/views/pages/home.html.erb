@@ -1,39 +1,36 @@
 <div class="background">
 
+  <!-- landing page video -->
+  <%= video_tag "landing-video.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+
   <div class="container-landing">
     <div class="landing-wrapper">
 
       <div class="landing-img">
         <%= image_tag(asset_path('logo-white.png')) %>
       </div>
-
-      <div class="m-2">
-        <%= simple_form_for :experience, url: experiences_path, method: :get do |f| %>
+      <div class="landing-subtext">
+        <h5>Take a chance... on life</h5>
+      </div>
+      <div class="pt-2">
+        <%= simple_form_for :experience, url: results_experiences_path, method: :get do |f| %>
           <div class="search-form-control mt-3 ">
-            <input class="form-control required " type="text" name="query" id="query" />
+            <input class="form-control required search-bar" type="text" name="query" id="query" />
             <button name="button" type="submit" class="button-none" >
-              <i class="fas fa-search search-icon"></i>
+              <i class="fas fa-search search-icon search-icon-landing"></i>
             </button>
           </div>
         <% end %>
       </div>
 
-      <div class="btn-wrapper row px-3">
-        <div class="col-6 ">
-          <div class="text-center btn-border">
-              <%= link_to "Take a Gambly", experiences_path %>
-          </div>
+      <div class="btn-wrapper d-flex justify-content-around">
+        <div class="landing-btn-div">
+          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main gambly-btn" %>
         </div>
-
-        <div class="col-6">
-          <div class="text-center btn-border">
-            <%= link_to "View all experiences", experiences_path %>
-          </div>
-        </div>
-
+        <div class="landing-btn-div">
+          <%= link_to "View all experiences", experiences_path, class:"landing-btn-main" %>
+        </div>            
       </div>
-
     </div>
   </div>
-
 </div>

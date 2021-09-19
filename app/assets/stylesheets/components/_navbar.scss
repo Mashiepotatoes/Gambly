@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background-color: $gambly-purple;
+  // background-color: #F4F4F4;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,7 +10,7 @@
 
 .navbar-lewagon .navbar-brand img {
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 20px;
   width: 60px;
 }
@@ -26,12 +27,54 @@
 
 .navbar-landing .navbar-brand img {
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 20px;
   width: 60px;
+}
+
+.rounded-input{
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  background: none;
+}
+
+.rounded-input:focus{
+  outline: none;
 }
 
 // remove ul bullet //
 .list-style-none{
   list-style-type: none;
 }
+
+.logo-wrapper{
+  width: 80px;
+}
+
+.navbar-search-icon,.input-placeholder::placeholder{
+  color:white;
+}
+
+.nav-searchbar{
+  padding: 2px 0;
+  border-radius: 10px;
+  background:#502b9c;
+}
+
+//searchar underline styling
+
+//remove ml-3 at button
+// .underline-input{
+//   color: white;
+//   padding: 4px 8px;
+//  border: none;
+//   width: 200px;
+//   background: none;
+// }
+
+// .nav-searchbar{
+//   border-bottom: 2px solid white;
+// }
