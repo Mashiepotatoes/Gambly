@@ -74,6 +74,10 @@
   border: 2px solid $gambly-yellow;
 }
 
+.btn-border:hover > a {
+  color: $gambly-yellow;
+}
+
 .navbar-login-btn > a:hover {
   color: black !important;
 }
@@ -121,4 +125,12 @@
   border: 2px solid $gambly-purple;
   padding: 5px 20px;
   color:rgb(99, 97, 101)
+}
+
+.text-purple{
+  color: $gambly-purple;
+}
+
+.text-purple:hover{
+  text-decoration: none;
 }
