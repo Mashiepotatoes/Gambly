@@ -30,10 +30,10 @@
           <%= link_to "Add a review", new_experience_review_path(@experience), class: 'btn btn-ghost' %>
         </div>
         <h5>Average user rating: <%= @average_rating %>
-          <% if @all_reviews.count == 1 %>
+          <% if @reviews.count == 1 %>
             (1 review)
           <% else %>
-            (<%= @all_reviews.count %> reviews)
+            (<%= @reviews.count %> reviews)
           <% end %>
         </h5>
         <!-- each review -->
