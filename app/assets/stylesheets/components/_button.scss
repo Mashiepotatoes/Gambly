@@ -28,7 +28,8 @@
 }
 
 .btn-yellow{
-  // border: solid 1px $gambly-yellow;
+  border: solid 1px $gambly-yellow;
+  // box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
   border-radius: 10px;
   padding: 5px 15px;
   background-color: $gambly-yellow;
@@ -44,14 +45,14 @@
   box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
 }
 
-.btn-border:hover ,.btn-yellow:hover{
+.btn-border:hover ,.btn-yellow:hover ,.book-now-btn:hover{
   color: $gambly-yellow;
   background-color:rgba(59, 24, 95,.75);
   text-decoration: none;
   border: 2px solid $gambly-yellow;
 }
 
-.btn-border:hover > a{
+.btn-border:hover > a,.book-now-btn:hover > a{
   color: $gambly-yellow;
   text-decoration: none;
 }
