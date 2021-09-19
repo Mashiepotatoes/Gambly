@@ -1,11 +1,13 @@
-<h1>My Cart</h1>
-
-<%# // if cart is empty %>
-<p class="no-items d-none">You don't have anything in your cart yet</p>
-
-
-<%# // if i actually have a cart %>
-<div id="cart" class="d-none">
-  <div class="cart-items"></div>
-  <button class="btn btn-primary"> Order Now</button>
+<div class="container">
+  <h1>My Cart</h1>
+  <div class="card-product">
+    <%# // if i actually have a cart %>
+      <div id="cart" class="d-none">
+        <div class="cart-items"></div>
+      </div>
+    <%# // if cart is empty %>
+    <p class="no-items d-none">You don't have anything in your cart yet</p>
+  </div>
+  <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
+  <button class="btn btn-flat"> Order Now</button>
 </div>
