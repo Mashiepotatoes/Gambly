@@ -91,7 +91,13 @@
                     <div class="card-details p-3 d-flex flex-column ">
 
                       <div style="height:4.1rem">
-                        <strong><p><%= experience.name %></p></strong>
+                        <strong>
+                          <% if experience.name.length > 38 %>
+                            <p><%= experience.name.slice(0..40) %>...</p>
+                          <% else %>
+                            <p><%= experience.name %></p>
+                          <% end %>
+                        </strong>
                       </div>
 
                       <div>
