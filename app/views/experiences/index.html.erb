@@ -84,14 +84,23 @@
         <div class="cards">
 
             <% @experiences.each do |experience| %>
-              <div class="shadow-card">
+              <div class="experience-card">
                 <%= link_to experience_path(experience) do  %>
 
                     <img src=<%= experience.photo_url%> class="experience-img">
                     <div class="card-details p-3 d-flex flex-column ">
-                      <strong><p><%= experience.name %></p></strong>
-                      <p> $<%= experience.price %> </p>
-                      <small class="text-muted"> Book now for today </small>
+
+                      <div style="height:4.1rem">
+                        <strong><p><%= experience.name %></p></strong>
+                      </div>
+
+                      <div>
+                        <small class="text-muted"> Book now for today </small>
+                      </div>
+
+                      <div class="mt-1">
+                        <p class="m-0"> $<%= experience.price %> </p>
+                      </div>
                     </div>
 
                 <% end %>
