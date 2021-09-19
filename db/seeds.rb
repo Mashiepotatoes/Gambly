@@ -9,7 +9,7 @@
 Experience.destroy_all
 
 puts "start seeding"
-location = ["North", "East", "West", "South","North East","South West"]
+location = ["North", "East", "West", "South"]
 
 Experience.create(name:"Universal Studios Singapore Tickets" ,details: "Book with Klook to embark on a tropical adventure with amazing rides and at Universal Studios Singapore!Universal Studios Singapore tickets come with free vouchers every purchase! (selected packages only) @ Your little ones will be delighted to catch their favourite characters! Get ready to meet Elmo, say hi to the cast from Madagascar, and see the Minions at their despicable best! @ For a limited time only, experience Trick or Thrills this Halloween at Universal Studios Singapore. @ Enjoy amazing rides, trick-or-treating, and stand a chance to win a prize for best Halloween costume.",price: 49.00 ,photo_url: "https://res.klook.com/image/upload/c_fill,w_960,h_460,f_auto/activities/jlz0tqtnnebwfmrfodhf.webp", rating: 4.9, location: location.sample )
 
