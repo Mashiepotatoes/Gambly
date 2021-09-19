@@ -28,8 +28,7 @@
 }
 
 .btn-yellow{
-  border: solid 1px $gambly-yellow;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
+  // border: solid 1px $gambly-yellow;
   border-radius: 10px;
   padding: 5px 15px;
   background-color: $gambly-yellow;
@@ -40,7 +39,7 @@
   border-radius: 10px;
   color: black;
   border : 3px solid $gambly-yellow;
-  padding: 8px 0;
+  padding: 8px 20px;
   background-color: $gambly-yellow;
   box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
 }
@@ -101,49 +100,50 @@
   color: black !important;
 }
 
-// -------- landing page buttons ------- //
-
-// .btn-landing-routes {
-//   background-color: transparent;
-//   border-radius: 10px;
-//   margin-top: 10px;
-// }
-
-// .btn-landing-routes:hover {
-//   text-decoration: none;
-//   background-color: $gambly-yellow;
-//   color:white;
-//   text-transform: scale(1.2);
-// }
-
-.landing-btns-grp {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.landing-btn {
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.landing-btn:hover {
-  text-decoration: none;
-  color: black;
-  transform: scale(1.1);
-}
-
 .button-none{
   border :0px;
   background-color :transparent;
 }
+
+// ----- landing search bar magnifying glass ----- //
 
 .btn-search{
   border-radius: 10px;
   border: 2px solid $gambly-purple;
   padding: 5px 20px;
   color:rgb(99, 97, 101)
+}
+
+.search-icon-landing {
+  color: $gambly-purple !important;
+}
+
+.search-icon-landing:hover{
+  transform: scale(1.1);
+}
+
+// ----- landing buttons ----- //
+
+a.landing-btn-main{
+  text-decoration: none;
+  font-size: 16px;
+  color: $gambly-purple;
+  background-color: $gambly-yellow;
+  padding: 9px 40px;
+  border-radius: 10px;
+  opacity:0.95;
+}
+
+.landing-btn-div:hover{
+  transform: scale(1.05);
+}
+.btn-wrapper{
+  margin-top: 5px;
+}
+
+.gambly-btn{
+  padding-left: 60px !important;
+  padding-right: 60px !important;
 }
 
 .text-purple{

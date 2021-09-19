@@ -31,18 +31,17 @@ body {
   color: white;
   transition: .2s;
 }
+
 .box:hover i {
   opacity: 0;
   z-index: -1;
 }
 
-
-//---------- Placeholder styling below ----------//
-
 .search-bar {
   border-radius: 10px;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: 15px;
+  border-radius: 10px;
 }
 
 .search-form-control {
