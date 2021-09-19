@@ -6,6 +6,12 @@
   color: white;
 }
 
+.btn-purple:hover{
+  border: 2px solid $gambly-purple;
+  background-color: $gambly-yellow;
+  color: $gambly-purple;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -38,6 +44,19 @@
   background-color: $gambly-yellow;
   box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
 }
+
+.btn-border:hover ,.btn-yellow:hover{
+  color: $gambly-yellow;
+  background-color:rgba(59, 24, 95,.75);
+  text-decoration: none;
+  border: 2px solid $gambly-yellow;
+}
+
+.btn-border:hover > a{
+  color: $gambly-yellow;
+  text-decoration: none;
+}
+
 
 // landing page navbar log in/out btn
 .navbar-login-btn{
