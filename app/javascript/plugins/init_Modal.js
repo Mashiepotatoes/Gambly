@@ -61,32 +61,6 @@ const writeToLocalStorage = (experienceOrder) => {
   // debugger
   console.log(window.localStorage.order);
 
-<<<<<<< HEAD
-const writeToLocalStorage = (experienceOrder) => {
-  // if we do have a key for storing our items
-  // add the experience order directly to it
-  if (window.localStorage.order) {
-    const orderArr = JSON.parse(window.localStorage.order);
-    const experienceInCart = findExperienceInCart(experienceOrder.experienceId, orderArr);
-    // if the experienceOrder.id is in the order
-    if (experienceInCart) {
-      // then update
-      experienceInCart.amount = experienceOrder.amount;
-      window.localStorage.order = JSON.stringify(orderArr);
-    } else {
-      const orderArr = JSON.parse(window.localStorage.order);
-      orderArr.push(experienceOrder);
-      window.localStorage.order = JSON.stringify(orderArr);
-    }
-  } else {
-    window.localStorage.order = JSON.stringify([experienceOrder])
-    // if we dont have it, start it and add the item
-  }
-
-  console.log(window.localStorage.order);
-}
-
-=======
   //when i click on it
 
   // get the id from the modal div - current experience
@@ -95,7 +69,4 @@ const writeToLocalStorage = (experienceOrder) => {
   // write to local storage
 }
 
-
-
->>>>>>> 85347eebc9b79e5fa8be36e49f9a3edde1e58899
 export { initModal }

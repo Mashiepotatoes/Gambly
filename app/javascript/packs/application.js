@@ -36,20 +36,14 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initModal } from '../plugins/init_Modal';
 import { initCart } from '../plugins/init_Cart';
-<<<<<<< HEAD
-=======
 import { initStarRating } from '../plugins/init_star_rating';
->>>>>>> 85347eebc9b79e5fa8be36e49f9a3edde1e58899
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initModal();
   initCart();
-<<<<<<< HEAD
-=======
   initStarRating();
->>>>>>> 85347eebc9b79e5fa8be36e49f9a3edde1e58899
 });
 
 document.addEventListener("turbolinks:load", function () {
