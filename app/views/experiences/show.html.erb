@@ -8,6 +8,7 @@
       <div class="card-trip-infos">
         <div><h2><%= @experience.name.capitalize %></h2></div>
 
+
         <div class="wishlist  d-flex justify-content-center align-items-center">
           <div class="heart-container text-center">
 
@@ -19,6 +20,7 @@
               <%= link_to experience_favorites_path(@experience), method: :post do %>
                 <i class="far fa-heart"></i>
               <% end %>
+
             <% end %>
           </div>
 
@@ -35,6 +37,8 @@
             <% end %>
             </ul>
           </div>
+
+   
         </div>
       </div>
 
