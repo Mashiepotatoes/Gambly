@@ -1,21 +1,30 @@
 <!--------- banner --------->
-<div class="exp-index-banner">
+<div class="exp-index-banner scroller">
   <div class="main-banner h-100">
-
-      <%= image_tag(asset_path('scott-trento-mUFFI4CkmAI-unsplash.jpg'),style: "width:100%;height:100%") %>
+      <%= image_tag(asset_path('orchard.jpg'),style: "width:100%;height:480px;filter: brightness(0.5);") %>
   </div>
+
+  <div class="main-banner h-100">
+      <%= image_tag(asset_path('theme_park.jpg'),style: "width:100%;height:480px;filter: brightness(0.5);") %>
+   </div>
+
+  <div class="main-banner h-100">
+       <%= image_tag(asset_path('roberto-nickson-qxD1jo7KW70-unsplash.jpg'),style: "width:100%;height:480px;filter: brightness(0.5);") %>
+  </div>
+</div>
 
   <!------ banner/search bar ------>
   <div class="container-landing-small">
     <div class="landing-wrapper">
 
       <div class="landing-img">
-        <%= image_tag(asset_path('logo-white.png')) %>
+         <%= image_tag(asset_path('logo-white.png')) %>
       </div>
 
       <div class="m-2">
         <%= simple_form_for :experience, url: experiences_path, method: :get do |f| %>
           <div class="search-form-control mt-3 ">
+
             <input class="form-control required " type="text" name="query" id="query" />
             <button name="button" type="submit" class="button-none" >
               <i class="fas fa-search search-icon"></i>
@@ -26,14 +35,14 @@
 
       <div class="btn-wrapper row px-3">
         <div class="col-6 ">
-          <div class="text-center btn-border">
-              <%= link_to "Take a Gambly", experiences_path,class: "text-purple" %>
+          <div class="text-center btn-border ">
+              <%= link_to "Take a Gambly", experiences_path,class:"text-purple"%>
           </div>
         </div>
 
         <div class="col-6">
           <div class="text-center btn-border">
-            <%= link_to "View all experiences", experiences_path,class: "text-purple" %>
+            <%= link_to "View all ", experiences_path,class:"text-purple" %>
           </div>
         </div>
 
@@ -43,31 +52,54 @@
   </div>
 </div>
 
-<!--- dropdown list for location filter --->
- <form action="/experiences/filter" method="get">
-  <label>Filter by Location</label><br>
-     <select name="filter">
-      <option>North</option>
-      <option>South</option>
-      <option>East</option>
-      <option>West</option>
-    </select>
-    <button>Submit</button>
- </form>
-</div>
+<div class="container">
 
-<!--------- cards ---------->
-<div class="container my-5">
-  <div class="cards">
-    <% @experiences.each do |experience| %>
-        <%= link_to experience_path(experience) do  %>
-          <img src=<%= experience.photo_url%> class="experience-img">
-          <div class="rounded-bottom p-3 d-flex flex-column background-white">
-            <strong><%= experience.name %> </strong>
-            <p> <%= experience.price %> </p>
-            <small class="text-muted"> Book now for today </small>
-          </div>
-        <% end %>
-    <% end %>
+  <div class="navigation-bar">
+      
+  </div>
+  <div class="outer-card">
+  <!--- dropdown list for location filter --->
+    <div class="my-4 location-filter-panel">
+      <strong><label>Location</label></strong><hr>
+        <div class="location-form mt-4">
+          <form action="/experiences/filter" method="get" >
+              <div style="height: 33px">
+                <select name="filter" class="w-100 h-100">
+                  <option>North</option>
+                  <option>South</option>
+                  <option>East</option>
+                  <option>West</option>
+                </select>
+              </div>
+              <div class="mt-4">
+                <button class="btn-search">Search</button>
+              </div>
+          </form>
+      </div>
+    </div>
+
+  <!--------- cards ---------->
+
+      <div class="experiences-cards my-4">
+        <div class="cards">
+
+            <% @experiences.each do |experience| %>
+              <div class="shadow-card">
+                <%= link_to experience_path(experience) do  %>
+
+                    <img src=<%= experience.photo_url%> class="experience-img">
+                    <div class="card-details p-3 d-flex flex-column ">
+                      <strong><p><%= experience.name %></p></strong>
+                      <p> $<%= experience.price %> </p>
+                      <small class="text-muted"> Book now for today </small>
+                    </div>
+
+                <% end %>
+              </div>
+            <% end %>
+
+        </div>
+      </div>
+
   </div>
 </div>

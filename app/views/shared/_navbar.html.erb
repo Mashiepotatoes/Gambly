@@ -1,4 +1,4 @@
-<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
 
     <%= image_tag(asset_path('GAMBLY(5).png')) %>
@@ -12,8 +12,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class=" mr-auto d-flex align-items-center mb-0 list-style-none">
       <% if user_signed_in? %>
-        <li class="nav-item active list-style-none">
-          <%= link_to "Home", root_path, class: "nav-link btn-yellow text-white" %>
+        <li class="nav-item active nav-li list-style-none">
+          <%= link_to "Home", root_path, class: "nav-link navbar-login-btn text-white" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Cart", cart_path, class: "nav-link" %>
@@ -28,8 +28,8 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "btn-yellow nav-link text-white" %>
+        <li class="nav-item nav-li">
+          <%= link_to "Login", new_user_session_path, class: "nav-link text-white navbar-login-btn" %>
         </li>
       <% end %>
     </ul>

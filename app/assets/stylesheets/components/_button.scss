@@ -1,14 +1,6 @@
-// .btn-flat {
-//   color: white;
-//   padding: 8px 24px;
-//   border-radius: 4px;
-//   background: #1EDD88;
-//   transition: background 0.3s ease;
-// }
-
 .btn-purple {
-  border-radius: 5rem;
-  width: 100%;
+  border-radius: 10px;
+  width: 25%;
   padding: 8px 0;
   background-color: $gambly-purple;
   color: white;
@@ -29,41 +21,63 @@
   opacity: 1;
 }
 
-
-.btn-yellow, .btn-landing-routes {
+.btn-yellow{
   border: solid 1px $gambly-yellow;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
   border-radius: 10px;
   padding: 5px 15px;
-  background-color: transparent;
+  background-color: $gambly-yellow;
+  border: none;
 }
 
 .btn-border{
   border-radius: 10px;
+  color: black;
   border : 3px solid $gambly-yellow;
   padding: 8px 0;
+  background-color: $gambly-yellow;
   box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
 }
 
 // landing page navbar log in/out btn
 .navbar-login-btn{
-  border: solid 3px $gambly-yellow;
-  border-radius: 10px;
-  background-color: transparent;
   color: white !important;
 }
 
-.navbar-login-btn:hover ,.btn-border:hover ,.btn-yellow:hover{
-  background-color: rgba(38, 38, 38, 0.75);
+.nav-li{
+  // display: table-cell;
+  position: relative;
+  // padding: 15px 0;
+}
+
+.navbar-login-btn:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navbar-login-btn:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.btn-border:hover ,.btn-yellow:hover{
+  color: $gambly-yellow;
+  background-color:rgba(59, 24, 95,.75);
   text-decoration: none;
+  border: 2px solid $gambly-yellow;
 }
 
 .navbar-login-btn > a:hover {
   color: black !important;
 }
 
-// .btn-width{
-//   width: 200px;
-// }
 // -------- landing page buttons ------- //
 
 // .btn-landing-routes {
@@ -97,19 +111,14 @@
   transform: scale(1.1);
 }
 
-// .btn-submit {
-//   border-radius: 10px;
-//   margin-left: 5px;
-// }
-
 .button-none{
   border :0px;
   background-color :transparent;
 }
 
-.btn-border{
+.btn-search{
   border-radius: 10px;
-  border : 3px solid $gambly-yellow;
-  padding: 8px 0;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.21), 0 15px 12px rgba(0,0,0,0.11);
+  border: 2px solid $gambly-purple;
+  padding: 5px 20px;
+  color:rgb(99, 97, 101)
 }
