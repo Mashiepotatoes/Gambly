@@ -69,6 +69,4 @@ const writeToLocalStorage = (experienceOrder) => {
   // write to local storage
 }
 
-
-
 export { initModal }
