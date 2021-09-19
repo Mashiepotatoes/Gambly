@@ -1,11 +1,22 @@
+.container--width {
+  width: 1700px;
+  margin: 0 auto;
+}
+
 .location-filter-panel{
   padding: 20px;
   background-color: white;
   border-radius: 10px;
 }
 
-.outer-card{
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-gap: 16px;
+.index-background {
+  background-color: $gambly-purple;
+}
+
+#index-h1{
+  margin: 30px 0;
+}
+
+body {
+  background-color: white;
 }

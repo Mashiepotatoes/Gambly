@@ -119,9 +119,10 @@
 
 .btn-search{
   border-radius: 10px;
-  border: 2px solid $gambly-purple;
+  border: none;
+  background-color: $gambly-purple;
   padding: 5px 20px;
-  color:rgb(99, 97, 101)
+  color: white;
 }
 
 .search-icon-landing {
