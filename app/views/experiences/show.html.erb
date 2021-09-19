@@ -30,10 +30,10 @@
           <%= link_to "Add a review", new_experience_review_path(@experience), class: 'btn btn-ghost' %>
         </div>
         <h5>Average user rating: <%= @average_rating %>
-          <% if @all_reviews.count == 1 %>
+          <% if @reviews.count == 1 %>
             (1 review)
           <% else %>
-            (<%= @all_reviews.count %> reviews)
+            (<%= @reviews.count %> reviews)
           <% end %>
         </h5>
         <!-- each review -->
@@ -42,7 +42,7 @@
             <span>Rating: <%= review.rating %></span>
 
             <!-- this is for filled stars -->
-            <% review.rating.to_i.times do |i| %> 
+            <% review.rating.to_i.times do |i| %>
             <span>
               <i class="fas fa-star"></i>
             </span>
@@ -55,7 +55,11 @@
 
             <!-- review content -->
             <h4><%= review.title %></h4>
-            <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y by #{review.user[:username]}") %>)</em></p>
+              <% if review.user_id %>
+                <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y by #{review.user[:username]}") %>)</em></p>
+              <% else %>
+                <p class="border-bottom"><%= review.content %> <em>(Posted on:<%= review.created_at.strftime(" #{review.created_at.day.ordinalize} %B %Y") %> by anonymous user)</em></p>
+              <% end %>
           <% end %>
         </div>
         <br>

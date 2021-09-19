@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       render :new
     else
       # check if current user has already reviewed this
-      if @search_existing_review.user == current_user
+      if @search_existing_reviews.user == current_user
         flash[:alert] = "You have already reviewed this experience!"
         redirect_to experience_path(@experience)
       else
