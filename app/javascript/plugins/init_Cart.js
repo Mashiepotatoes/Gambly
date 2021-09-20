@@ -31,7 +31,7 @@ const renderCartItems = (data, cart) => {
     cartItems.innerHTML += `
     <p>${item.experienceName} - Price: SGD ${(item.experiencePrice /100 ).toFixed(2)}</p>`
   })
-  cartItems.insertAdjacentHTML('beforeend', `<p> Total: SGD ${data.total} </p>`)
+  cartItems.insertAdjacentHTML('beforeend', `<p> Total: SGD ${data.total.toFixed(2)} </p>`)
   console.log(data)
 }
 
