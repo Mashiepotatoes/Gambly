@@ -29,7 +29,7 @@ const renderCartItems = (data, cart) => {
   const cartItems = cart.querySelector('.cart-items');
   data.items.forEach((item) => {
     cartItems.innerHTML += `
-    <p>${item.experienceName} - Price: SGD ${(item.experiencePrice /100 ).toFixed(2)}</p>`
+    <p>${item.experienceName} - Price: SGD ${(item.experiencePrice /100 ).toFixed(2)} per pax</p>`
   })
   cartItems.insertAdjacentHTML('beforeend', `<p> Total: SGD ${data.total.toFixed(2)} </p>`)
   console.log(data)

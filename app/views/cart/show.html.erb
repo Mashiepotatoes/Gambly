@@ -5,7 +5,9 @@
     <%# // if i actually have a cart %>
     <p class="no-items d-none m-3">You don't have anything in your cart yet</p>
     <div id="cart" class="d-none">
-      <div class="cart-items"></div>
+      <div class="cart-items">
+      <%# <input type="button" class="remove-item" value="X" /> %>
+      </div>
     </div>
   </div>
   <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
