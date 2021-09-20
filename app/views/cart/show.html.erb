@@ -11,5 +11,8 @@
     </div>
   </div>
   <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
-  <button class="btn btn-flat"> Pay Now</button>
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'experience-ids', 'no value' %>
+    <%= submit_tag 'Pay Now', class: 'btn btn-success' %>
+<% end %>
 </div>
