@@ -31,14 +31,13 @@ const renderCartItems = (data, cart) => {
   data.items.forEach((item) => {
     experienceIds.push(item.experienceId)
     cartItems.innerHTML += `
-    <p>${item.experienceName} - Price: SGD ${(item.experiencePrice /100 ).toFixed(2)} per pax</p>`
+    <h6>${item.experienceName}</h6>
+    <p class="border-bottom">Price: SGD ${(item.experiencePrice /100 ).toFixed(2)} per pax</p>`
   })
-  cartItems.insertAdjacentHTML('beforeend', `<p> Total: SGD ${data.total.toFixed(2)} </p>`)
+  cartItems.insertAdjacentHTML('beforeend', `<p class="text-right font-weight-bold"> Total: SGD ${data.total.toFixed(2)} </p>`)
   const hiddenField = document.querySelector('#experience-ids');
   hiddenField.value = experienceIds;
-
 }
-
 
 
 // const activateSubmitBtn = (cart) => {

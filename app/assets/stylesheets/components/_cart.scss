@@ -1,5 +1,19 @@
+.main-card {
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .cart-flex{
   display: flex;
+}
+
+.product-title {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .card-product {
@@ -10,6 +24,11 @@
   display: flex;
   align-items: center;
   width: 80%;
+  height: 60vh;
+  border-radius: 10px;
+  padding: 30px;
+  overflow: scroll;
+
 }
 
 .card-product img {
@@ -29,4 +48,22 @@
   flex-direction: column;
   width: 20%;
   margin-left: 30px;
+}
+
+.cart-container{
+  width: 800px;
+  height: 100vh;
+}
+
+.cart-container-page{
+  background-color: $gambly-purple;
+  width: 100vh;
+  width: 100vw;
+  position: relative
+}
+
+.cart-container-page > h1{
+  position: absolute;
+    top: 70px;
+    left: 70px;
 }

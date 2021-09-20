@@ -3,9 +3,9 @@
   <div class="cards">
     <% @favorites.each do |favorite| %>
       <%= link_to experience_path(favorite.experience_id) do  %>
-      <div class="rounded-bottom p-3 d-flex flex-column background-white">
+      <div class="p-3 d-flex flex-column background-white favorite-card">
         <img src=<%= favorite.experience.photo_url%> class="experience-img">
-        <strong class="experience-name"><%= favorite.experience.name %></strong>
+        <p class="experience-name"><strong><%= favorite.experience.name %></strong></p>
       </div>
       <% end %>
     <% end %>

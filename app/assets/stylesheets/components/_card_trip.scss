@@ -1,24 +1,28 @@
+.location-filter-panel {
+  height: 500px;
+}
 .card-trips {
   overflow: hidden;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-}
-
-.card-trip-containers {
-  background-color: white;
-  padding:0 2rem,
 }
 
 .card-trips > img {
   height: 350px;
   width: 100%;
   object-fit: cover;
+  padding-top: 50px;
 }
 
 .card-trips h2 {
   font-size: 32px;
   font-weight: bold;
   margin: 8px;
+}
+
+.card-trip-containers {
+  background-color: white;
+  padding:0 2rem;
+  border-radius: 0 0 10px 10px;
 }
 
 .card-trips h3{
@@ -48,6 +52,7 @@
   margin-top: 1.5rem;
   background-color: white;
   padding: 2rem 4.5rem;
+  border-radius: 10px;
 }
 
 .term-text{
