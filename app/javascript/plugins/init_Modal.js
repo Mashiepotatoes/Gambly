@@ -1,6 +1,3 @@
-const price = document.querySelector('#experience-price');
-const pax = document.querySelector('#experience-pax');
-
 const initModal = () => {
   const modal = document.querySelector('#exampleModal');
 
@@ -9,13 +6,24 @@ const initModal = () => {
       var button = $(event.relatedTarget) // Button that triggered the modal
       var experienceName = button.data('experience-name')
       var experiencePrice = button.data('experience-price')
-      var experienceId = button.data('experience-id')// Extract info from data-* attributes
+      var experienceId = button.data('experience-id')
+      // Extract info from data-* attributes
       // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
       var modal = $(this)
+
+      const paxValue = modal.find('#experience-pax')
+      paxValue.val(1)
+
+      const modalPrice = modal.find('.modal-price')
+      modalPrice.text('$' + experiencePrice * paxValue.val())
+
       modal.find('.modal-title').text(experienceName)
-      modal.find('.modal-price').text('$' + experiencePrice)
       modal.attr('data-current-experience-id', experienceId)
+
+      paxValue.on('change', () => {
+        modalPrice.text('$' + experiencePrice * paxValue.val())
+      })
     })
     initAddToCart();
   }
@@ -24,12 +32,8 @@ const initModal = () => {
 const initAddToCart = () => {
   // select the modal button
   const addToCartBtn = document.querySelector('.btn-modal');
-
-  pax.addEventListener('change', (event) => {
-    const totalPax = event.target.value;
-    price.value = "500"
-  })
-
+  const price = document.querySelector('#experience-price');
+  const pax = document.querySelector('#experience-pax');
   addToCartBtn.addEventListener('click', () => {
     const currentExperienceId = document.querySelector('.modal').dataset.currentExperienceId;
 

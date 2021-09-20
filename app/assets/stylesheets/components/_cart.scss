@@ -1,5 +1,19 @@
+.main-card {
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .cart-flex{
   display: flex;
+}
+
+.product-title {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .card-product {
@@ -14,6 +28,7 @@
   border-radius: 10px;
   padding: 30px;
   overflow: scroll;
+
 }
 
 .card-product img {
