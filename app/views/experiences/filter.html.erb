@@ -20,8 +20,8 @@
       <div class="landing-img">
         <%= image_tag(asset_path('logo-white.png')) %>
       </div>
-      <div class="landing-subtext">
-        <h5>Take a chance... on life</h5>
+      <div class="search-subtext">
+        <h5>Take a chance on life!</h5>
       </div>
       <div class="pt-2">
         <%= simple_form_for :experience, url: results_experiences_path, method: :get do |f| %>
@@ -68,8 +68,8 @@
                 <div class="card-details p-3 d-flex flex-column ">
                   <div style="height:4.1rem">
                     <strong>
-                      <% if experience.name.length > 50 %>
-                        <p><%= experience.name.slice(0..50) %>...</p>
+                      <% if experience.name.length > 45 %>
+                        <p><%= experience.name.slice(0..45) %>...</p>
                       <% else %>
                         <p><%= experience.name %></p>
                       <% end %>

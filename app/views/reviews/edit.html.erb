@@ -1,12 +1,14 @@
-<div class="container">
-  <h1>Update review</h1>
-  <h2><%= @experience.name %></h2>
-  <%= simple_form_for [@experience, @review] do |f| %>
-    <%= f.input :title, placeholder: 'Please write a title for this review' %>
-    <%= f.input :content, placeholder: 'Please review the experience' %>
-    <%= f.input :rating, collection: (1..5).to_a, label: 'Please rate the experience from 1 to 5' %>
-    <%= f.submit class: 'btn btn-flat btn-block' %>
-  <% end %>
-
-  <% console %>
+<div class="review-container-page">
+<h1 class="chelsea-yellow">Edit a review</h1>
+  <div class="container review-container d-flex justify-content-center align-items-center">
+    <div class="review-container-inner shadowed">
+      <%= simple_form_for [@experience, @review] do |f| %>
+      <h1><%= @experience.name %> </h1>
+        <%= f.input :title, placeholder: @review.title %>
+        <%= f.input :content, placeholder: @review.content %>
+        <%= f.input :rating, collection: (1..5).to_a, label: 'Please rate the experience from 1 to 5'%>
+        <%= f.submit class: 'btn btn-flat btn-block btn-review' %>
+      <% end %>
+    </div>
+  </div>
 </div>
