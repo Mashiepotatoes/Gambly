@@ -1,5 +1,9 @@
+const price = document.querySelector('#experience-price');
+const pax = document.querySelector('#experience-pax');
+
 const initModal = () => {
   const modal = document.querySelector('#exampleModal');
+
   if (modal) {
     $('#exampleModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Button that triggered the modal
@@ -20,13 +24,19 @@ const initModal = () => {
 const initAddToCart = () => {
   // select the modal button
   const addToCartBtn = document.querySelector('.btn-modal');
+
+  pax.addEventListener('change', (event) => {
+    const totalPax = event.target.value;
+    price.value = "500"
+  })
+
   addToCartBtn.addEventListener('click', () => {
     const currentExperienceId = document.querySelector('.modal').dataset.currentExperienceId;
-    const pax = document.querySelector('#experience-pax').value;
 
     const experienceOrder = {
       experienceId: currentExperienceId,
-      pax: pax
+      price: price.value,
+      pax: pax.value
     }
 
     writeToLocalStorage(experienceOrder)
@@ -34,7 +44,6 @@ const initAddToCart = () => {
 }
 
 const findExperienceInCart = (experienceOrder, orderArr) => {
-  debugger
   return orderArr.find((element) => element.experienceId === experienceOrder);
 }
 
