@@ -1,15 +1,16 @@
-<div class="container">
-  <h1>My Cart</h1>
+<div class="main-card">
+  <h1 class="product-title">My Cart <i class="fas fa-shopping-cart"></i></h1>
     <%# // if cart is empty %>
   <div class="card-product">
     <%# // if i actually have a cart %>
     <p class="no-items d-none m-3">You don't have anything in your cart yet</p>
     <div id="cart" class="d-none">
       <div class="cart-items">
-      <%# <input type="button" class="remove-item" value="X" /> %>
       </div>
     </div>
   </div>
-  <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
-  <button class="btn btn-flat"> Pay Now</button>
+  <div class="product-title">
+    <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
+    <button class="btn btn-flat"> Pay Now</button>
+  </div>
 </div>
