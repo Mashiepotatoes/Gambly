@@ -1,5 +1,3 @@
-const pax = document.querySelector('#experience-pax');
-
 const initModal = () => {
   const modal = document.querySelector('#exampleModal');
 
@@ -35,6 +33,7 @@ const initAddToCart = () => {
   // select the modal button
   const addToCartBtn = document.querySelector('.btn-modal');
   const price = document.querySelector('#experience-price');
+  const pax = document.querySelector('#experience-pax');
   addToCartBtn.addEventListener('click', () => {
     const currentExperienceId = document.querySelector('.modal').dataset.currentExperienceId;
 
