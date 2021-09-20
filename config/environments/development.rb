@@ -60,7 +60,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.hosts << "2327-203-125-102-229.ngrok.io"
+  config.hosts << /.*\.ngrok\.io/
 
 # precompiling video
   config.assets.check_precompiled_asset = false
