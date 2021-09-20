@@ -29,12 +29,12 @@ const renderCartItems = (data, cart) => {
   const cartItems = cart.querySelector('.cart-items');
   data.items.forEach((item) => {
     cartItems.innerHTML += `
-    <p>${item.experienceName} - Price: SGD ${(item.experiencePrice /100 ).toFixed(2)} per pax</p>`
+    <h6>${item.experienceName}</h6>
+    <p class="border-bottom">Price: SGD ${(item.experiencePrice /100 ).toFixed(2)} per pax</p>`
   })
-  cartItems.insertAdjacentHTML('beforeend', `<p> Total: SGD ${data.total.toFixed(2)} </p>`)
+  cartItems.insertAdjacentHTML('beforeend', `<p class="text-right font-weight-bold"> Total: SGD ${data.total.toFixed(2)} </p>`)
   console.log(data)
 }
-
 
 
 // const activateSubmitBtn = (cart) => {
