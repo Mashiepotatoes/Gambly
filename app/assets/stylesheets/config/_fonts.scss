@@ -15,3 +15,22 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+.chelsea-yellow{
+  font-family:'Chelsea Market', cursive;
+  color: #ffde59;
+}
+
+.chelsea-purple{
+  font-family:'Chelsea Market', cursive;
+  color: #5821a6;
+}
+
+.search-subtext > h5 {
+  font-family:'Chelsea Market', cursive;
+  color: white;
+  size:16px;
+  font-style: italic;
+  padding-left: 8px;
+  margin-top: -10px;
+}

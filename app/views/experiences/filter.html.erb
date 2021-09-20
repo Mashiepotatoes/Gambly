@@ -1,35 +1,98 @@
 <!--------- banner --------->
-<div class="exp-index-banner">
+<div class="exp-index-banner scroller">
+  <div class="main-banner h-100">
+    <%= image_tag(asset_path('orchard.jpg'),style: "width:100%; height:480px; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)") %>
+  </div>
 
+  <div class="main-banner h-100">
+    <%= image_tag(asset_path('theme_park.jpg'),style: "width:100%; height:480px; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)") %>
+  </div>
 
-  <!------ banner/search bar ------>
-  <div class="container-index">
-    <%= image_tag(asset_path('logo-white.png'), {class: 'exp-index-logo'}) %>
-    <%= form_tag results_experiences_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find an experience"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+  <div class="main-banner h-100">
+    <%= image_tag(asset_path('roberto-nickson-qxD1jo7KW70-unsplash.jpg'),style: "width:100%; height:480px; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)") %>
   </div>
 </div>
 
-<h1>Filtering all activities in Singapore by location: <%= params[:filter] %></h1>
+  <!------ banner/search bar ------>
+  <div class="container-landing-small">
+        <div class="landing-wrapper">
 
-<!--------- cards ---------->
-<div class="container my-5">
-  <div class="cards">
-    <% @experiences.each do |experience| %>
-        <%= link_to experience_path(experience) do  %>
-          <img src=<%= experience.photo_url%> class="experience-img">
-          <div class="rounded-bottom p-3 d-flex flex-column background-white">
-            <strong><%= experience.name %> </strong>
-            <p> <%= experience.price  %> </p>
-            <small class="text-muted"> Book now for today </small>
+      <div class="landing-img">
+        <%= image_tag(asset_path('logo-white.png')) %>
+      </div>
+      <div class="landing-subtext">
+        <h5>Take a chance... on life</h5>
+      </div>
+      <div class="pt-2">
+        <%= simple_form_for :experience, url: results_experiences_path, method: :get do |f| %>
+          <div class="search-form-control mt-3 ">
+            <input class="form-control required round-searchbar" type="text" name="query" id="query" />
+            <button name="button" type="submit" class="button-none" >
+              <i class="fas fa-search search-icon search-icon-landing"></i>
+            </button>
           </div>
         <% end %>
-    <% end %>
+      </div>
+
+      <div class="btn-wrapper d-flex justify-content-around">
+        <div class="landing-btn-div">
+          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main gambly-btn" %>
+        </div>
+        <div class="landing-btn-div">
+          <%= link_to "View all experiences", experiences_path, class:"landing-btn-main" %>
+        </div>            
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container--width">
+
+  <div class="navigation-bar">
+  </div>
+  <h1 class="chelsea-purple" id="index-h1">You are now viewing all experiences in the <%= params[:filter].downcase %> of Singapore!</h1>
+  <div class="outer-card">
+  
+
+    <!--------- cards ---------->
+
+    <div class="experiences-cards my-4 d-flex">
+      <div class="cards">
+        <% @experiences.each do |experience| %>
+          <div class="experience-card">
+            <%= link_to experience_path(experience) do  %>
+
+              <img src=<%= experience.photo_url%> class="experience-img">
+                <div class="card-details p-3 d-flex flex-column ">
+                  <div style="height:4.1rem">
+                    <strong>
+                      <% if experience.name.length > 50 %>
+                        <p><%= experience.name.slice(0..50) %>...</p>
+                      <% else %>
+                        <p><%= experience.name %></p>
+                      <% end %>
+                    </strong>
+                  </div>
+                  <div class="flex-row">
+                    <span>Rating: <%= experience.rating %></span>
+                      <% experience.rating.to_i.times do |i| %>
+                        <span><i class="fas fa-star"></i></span>
+                      <% end %>
+                  </div>
+                  <div>
+                    <small class="text-muted"> Book now for today </small>
+                  </div>
+
+                  <div class="mt-1">
+                    <p class="m-0"> $<%= experience.price %> </p>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
