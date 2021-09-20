@@ -1,16 +1,16 @@
-<div class="main-card">
-  <h1 class="product-title">My Cart <i class="fas fa-shopping-cart"></i></h1>
-    <%# // if cart is empty %>
-  <div class="card-product">
-    <%# // if i actually have a cart %>
-    <p class="no-items d-none m-3">You don't have anything in your cart yet</p>
-    <div id="cart" class="d-none">
-      <div class="cart-items">
+
+<div class="cart-container-page">
+  <div class="container card-container-inner">
+    <h1 class="chelsea-yellow">My Cart <i class="fas fa-shopping-cart"></i></h1>
+      <%# // if cart is empty %>
+    <div class="card-product">
+      <%# // if i actually have a cart %>
+      <p class="no-items d-none m-3">You don't have anything in your cart yet</p>
+      <div id="cart" class="d-none">
+        <div class="cart-items"></div>
       </div>
     </div>
-  </div>
-  <div class="product-title">
-    <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
-    <button class="btn btn-flat"> Pay Now</button>
+    <%= link_to "View more experiences", experiences_path, class:'btn btn-yellow' %>
+    <button class="btn btn-yellow"> Pay Now</button>
   </div>
 </div>
