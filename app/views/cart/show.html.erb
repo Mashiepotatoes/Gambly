@@ -12,12 +12,12 @@
     </div>
     <div class="button-wrapper-cart d-flex justify-content-around align-items-center">
       <div><%= link_to "View more experiences", experiences_path, class:'btn btn-yellow' %></div>
-      <div><button class="btn btn-yellow"> Pay Now</button></div>
+ 
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag 'experience-ids', 'no value' %>
+        <%= submit_tag 'Pay Now', class: 'btn btn-yellow' %>
+      <% end %>
     </div>
   </div>
-  <%= link_to "View more experiences", experiences_path, class:'btn btn-primary' %>
-  <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'experience-ids', 'no value' %>
-    <%= submit_tag 'Pay Now', class: 'btn btn-success' %>
-<% end %>
+
 </div>

@@ -36,11 +36,11 @@
 
       <div class="btn-wrapper d-flex justify-content-around">
         <div class="landing-btn-div">
-          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main gambly-btn" %>
+          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main  p-2" %>
         </div>
         <div class="landing-btn-div">
-          <%= link_to "View all experiences", experiences_path, class:"landing-btn-main" %>
-        </div>            
+          <%= link_to "View all experiences", experiences_path, class:"landing-btn-main p-2" %>
+        </div>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
   </div>
   <h1 class="chelsea-purple" id="index-h1">Viewing search results for: "<%= params[:query] %>"</h1>
   <div class="outer-card">
-  
+
 
   <!--------- cards ---------->
     <% if @experiences.length == 0 %>
