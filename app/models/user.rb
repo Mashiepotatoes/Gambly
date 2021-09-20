@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :user_experiences
   has_many :experiences, through: :user_experiences
   has_many :orders
+  has_many :favorites, dependent: :destroy
 
   # reviews
   has_many :reviews, dependent: :nullify
@@ -24,3 +25,4 @@ class User < ApplicationRecord
     end
   end
 end
+5
