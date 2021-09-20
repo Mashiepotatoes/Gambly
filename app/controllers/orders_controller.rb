@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def create
-    experience = Experience.find(params[:experience_id])
-    order = Order.create!(experience: experience, amount: experience.price, state: 'pending', user: current_user)
+    @experiences =  params[:'experience-ids'].split(',').map { |id| Experience.find(id) }
+    total = @experiences.sum { |exp| exp.price }.to_i
+    #experience = Experience.find(params[:experience_id])
+    # map all the experiences into an array to be consumed by line items
+    # get the total of the all the experiences so I can send it to the payments
+    order = Order.create!(experiences: params[:'experience-ids'].split(','), amount: total, state: 'pending', user: current_user)
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -9,10 +13,10 @@ class OrdersController < ApplicationController
       line_items: [{
         price_data: {
           currency: 'sgd',
-          unit_amount: experience.price_cents,
+          unit_amount: total * 100,
           product_data: {
-            name: experience.name,
-            images: [experience.photo_url]
+            name: "Your experience Order",
+            images: [@experiences.first.photo_url]
           }
         },
         quantity: 1
