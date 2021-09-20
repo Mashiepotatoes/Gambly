@@ -1,4 +1,3 @@
-const price = document.querySelector('#experience-price');
 const pax = document.querySelector('#experience-pax');
 
 const initModal = () => {
@@ -16,7 +15,6 @@ const initModal = () => {
       var modal = $(this)
 
       const paxValue = modal.find('#experience-pax')
-      console.log(paxValue);
       paxValue.val(1)
 
       const modalPrice = modal.find('.modal-price')
@@ -25,9 +23,8 @@ const initModal = () => {
       modal.find('.modal-title').text(experienceName)
       modal.attr('data-current-experience-id', experienceId)
 
-      paxValue.on('change', (event) => {
-        const totalPax = event.target.value;
-        price.innerHTML = `$${totalPax * experiencePrice}`
+      paxValue.on('change', () => {
+        modalPrice.text('$' + experiencePrice * paxValue.val())
       })
     })
     initAddToCart();
@@ -37,7 +34,7 @@ const initModal = () => {
 const initAddToCart = () => {
   // select the modal button
   const addToCartBtn = document.querySelector('.btn-modal');
-
+  const price = document.querySelector('#experience-price');
   addToCartBtn.addEventListener('click', () => {
     const currentExperienceId = document.querySelector('.modal').dataset.currentExperienceId;
 
