@@ -30,6 +30,7 @@
         <li class="nav-item nav-li">
           <%= link_to "My Cart", cart_path, class: "nav-link navbar-login-btn text-white" %>
         </li>
+
         <li class="nav-item dropdown ml-3">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -42,6 +43,10 @@
       <% else %>
         <li class="nav-item nav-li">
           <%= link_to "Login", new_user_session_path, class: "nav-link text-white navbar-login-btn" %>
+        </li>
+
+        <li class="nav-item nav-li">
+          <%= link_to "Sign up", new_user_registration_path, class: "navbar-login-btn nav-link" %>
         </li>
       <% end %>
     </ul>
