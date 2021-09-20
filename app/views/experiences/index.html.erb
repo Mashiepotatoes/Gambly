@@ -36,7 +36,7 @@
 
       <div class="btn-wrapper d-flex justify-content-around">
         <div class="landing-btn-div">
-          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main gambly-btn" %>
+          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main " %>
         </div>
         <div class="landing-btn-div">
           <%= link_to "View all experiences", experiences_path, class:"landing-btn-main" %>
@@ -62,7 +62,7 @@
 
         <!--- dropdown list for location filter --->
         <div class="location-filter-panel">
-          <strong><label>Location</label></strong><hr>
+          <h2 style="font-size:18px;" class="text-center"><strong><label>Location</label></strong></h2>
             <div class="location-form mt-4">
               <form action="/experiences/filter" method="get" >
                   <div style="height: 30px">

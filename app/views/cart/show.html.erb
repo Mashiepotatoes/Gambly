@@ -1,16 +1,18 @@
 
 <div class="cart-container-page">
-  <div class="container card-container-inner">
+  <div class="container d-block justify-content-center align-items-center container-cart">
     <h1 class="chelsea-yellow">My Cart <i class="fas fa-shopping-cart"></i></h1>
       <%# // if cart is empty %>
-    <div class="card-product">
+    <div class="card-product mt-5">
       <%# // if i actually have a cart %>
       <p class="no-items d-none m-3">You don't have anything in your cart yet</p>
       <div id="cart" class="d-none">
         <div class="cart-items"></div>
       </div>
     </div>
-    <%= link_to "View more experiences", experiences_path, class:'btn btn-yellow' %>
-    <button class="btn btn-yellow"> Pay Now</button>
+    <div class="button-wrapper-cart d-flex justify-content-around align-items-center">
+      <div><%= link_to "View more experiences", experiences_path, class:'btn btn-yellow' %></div>
+      <div><button class="btn btn-yellow"> Pay Now</button></div>
+    </div>
   </div>
 </div>
