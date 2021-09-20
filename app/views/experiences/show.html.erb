@@ -1,11 +1,11 @@
 <div class="container mt-5">
 
-  <div class="card-trip">
+  <div class="card-trips">
     <img src=<%=@experience.photo_url%> />
     <%# beginning of card-trip %>
-    <div class="card-trip-container d-flex">
+    <div class="card-trip-containers d-flex">
 
-      <div class="card-trip-infos">
+      <div class="card-trip-info">
         <div><h2><%= @experience.name.capitalize %></h2></div>
 
 
@@ -24,7 +24,7 @@
             <% end %>
           </div>
 
-          <p class="p-0">Add to wishlist</p>
+          <p class="p-0">Add to favorites</p>
         </div>
 
 
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="card-trip-checkout">
+      <div class="card-trip-pay">
 
         <div class="checkout-card text-center ">
           <div>

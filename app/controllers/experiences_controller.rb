@@ -7,7 +7,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @favorite = Favorite.find_by_experience_id(params[:id])
     @average_rating = average_rating
-    @all_reviews = Review.all
+    @all_reviews = Experience.find(params[:id]).reviews
   end
 
   def sample
@@ -58,5 +58,6 @@ class ExperiencesController < ApplicationController
     @reviews = Review.where(experience_id: @experience.id)
     all_ratings = @reviews.map { |review| review.rating.to_i }
     avg_rating = ( all_ratings.sum.to_f / all_ratings.count ).round(1)
+
   end
 end
