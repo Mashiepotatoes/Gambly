@@ -6,8 +6,8 @@
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
-
+$big-headers-font: 'Chelsea Market', cursive;
+$sub-headers-font: 'Poppins', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -18,8 +18,6 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-$poppins: 'Poppins', sans-serif;
-$works: 'Work Sans', sans-serif;
 
 .chelsea-yellow{
   font-family:'Chelsea Market', cursive;
