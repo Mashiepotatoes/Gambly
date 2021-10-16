@@ -17,11 +17,6 @@ body {
   outline: none;
   transition: .5s;
 }
-.box:hover input {
-  width: 350px;
-  background: #272133;
-  border-radius: 10px;
-}
 
 .search-icon {
   position: absolute;
@@ -30,11 +25,6 @@ body {
   font-size: 1.4rem;
   color: white;
   transition: .2s;
-}
-
-.box:hover i {
-  opacity: 0;
-  z-index: -1;
 }
 
 .search-bar {
