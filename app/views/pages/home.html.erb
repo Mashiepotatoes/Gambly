@@ -1,8 +1,8 @@
 <!-- landing page video -->
 <%= video_tag "https://res.cloudinary.com/deqrylboj/video/upload/v1632124852/landing-video_tom4ps.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
 
-<div class="container-landing">
-  <div class="landing-img">
+<div class="search-container">
+  <div class="search-container__img">
     <%= image_tag(asset_path('logo-white.png')) %>
   </div>
   <div class="search-subtext big-headers-font">
@@ -20,7 +20,7 @@
   </div>
 
   <div class="btn-wrapper">
-    <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn" %>
-    <%= link_to "View all experiences", experiences_path, class:"landing-btn" %>
+    <%= link_to "Take a Gambly", sample_experiences_path, class:"search-container__btn" %>
+    <%= link_to "View all experiences", experiences_path, class:"search-container__btn" %>
   </div>
 </div>
