@@ -16,16 +16,6 @@
   border-radius: 10px;
 }
 
-.landing-subtext h5 {
-  color: white;
-  font-family: 'Chelsea Market', cursive;
-  font-style: italic;
-  font-size: 16px;
-  padding: 0 8px;
-  margin-top: -12px;
-  margin-bottom: 8px;
-}
-
 .box {
   position: absolute;
   top: 130px;
@@ -57,6 +47,14 @@
   position: absolute;
   top: 120px;
   left: 100px;
+}
+
+.search-subtext > h5 {
+  color: $white;
+  size:16px;
+  font-style: italic;
+  padding-left: 8px;
+  margin-top: -10px;
 }
 
 //--- landing page video ---//
