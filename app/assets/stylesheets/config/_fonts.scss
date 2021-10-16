@@ -19,19 +19,32 @@ $sub-headers-font: 'Poppins', sans-serif;
 // }
 // $my-font: "Font Name";
 
-.chelsea-yellow{
-  font-family:'Chelsea Market', cursive;
-  color: #ffde59;
+.big-headers-font {
+  font-family: $big-headers-font;
 }
 
-.chelsea-purple{
-  font-family:'Chelsea Market', cursive;
-  color: #5821a6;
+.sub-headers-font {
+  font-family: $sub-headers-font;
+}
+
+.body-font {
+  font-family: $body-font;
+}
+
+.text-yellow {
+  color: $gambly-yellow;
+}
+
+.text-purple {
+  color: $gambly-purple;
+}
+
+.text-grey {
+  color: $gambly-grey;
 }
 
 .search-subtext > h5 {
-  font-family:'Chelsea Market', cursive;
-  color: white;
+  color: $white;
   size:16px;
   font-style: italic;
   padding-left: 8px;
