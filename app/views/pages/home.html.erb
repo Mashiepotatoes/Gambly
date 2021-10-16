@@ -1,36 +1,26 @@
-<div class="background">
+<!-- landing page video -->
+<%= video_tag "https://res.cloudinary.com/deqrylboj/video/upload/v1632124852/landing-video_tom4ps.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
 
-  <!-- landing page video -->
-  <%= video_tag "https://res.cloudinary.com/deqrylboj/video/upload/v1632124852/landing-video_tom4ps.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video" %>
+<div class="container-landing">
+  <div class="landing-img">
+    <%= image_tag(asset_path('logo-white.png')) %>
+  </div>
+  <div class="search-subtext big-headers-font">
+    <h5>Take a chance on life!</h5>
+  </div>
+  <div>
+    <%= simple_form_for :experience, url: results_experiences_path, method: :get do |f| %>
+      <div class="search-form-control">
+        <input class="form-control required search-bar" type="text" name="query" id="query" />
+        <button name="button" type="submit" class="button-none" >
+          <i class="fas fa-search search-icon search-icon-landing"></i>
+        </button>
+      </div>
+    <% end %>
+  </div>
 
-  <div class="container-landing">
-    <div class="landing-wrapper">
-
-      <div class="landing-img">
-        <%= image_tag(asset_path('logo-white.png')) %>
-      </div>
-      <div class="search-subtext big-headers-font">
-        <h5>Take a chance on life!</h5>
-      </div>
-      <div class="pt-2">
-        <%= simple_form_for :experience, url: results_experiences_path, method: :get do |f| %>
-          <div class="search-form-control mt-3 ">
-            <input class="form-control required search-bar" type="text" name="query" id="query" />
-            <button name="button" type="submit" class="button-none" >
-              <i class="fas fa-search search-icon search-icon-landing"></i>
-            </button>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="btn-wrapper d-flex justify-content-around">
-        <div class="landing-btn-div">
-          <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn-main p-3" %>
-        </div>
-        <div class="landing-btn-div">
-          <%= link_to "View all experiences", experiences_path, class:"landing-btn-main p-3" %>
-        </div>
-      </div>
-    </div>
+  <div class="btn-wrapper">
+    <%= link_to "Take a Gambly", sample_experiences_path, class:"landing-btn" %>
+    <%= link_to "View all experiences", experiences_path, class:"landing-btn" %>
   </div>
 </div>
