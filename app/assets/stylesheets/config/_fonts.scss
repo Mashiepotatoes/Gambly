@@ -19,16 +19,16 @@ $sub-headers-font: 'Poppins', sans-serif;
 // }
 // $my-font: "Font Name";
 
+body {
+  font-family: $body-font;
+}
+
 .big-headers-font {
   font-family: $big-headers-font;
 }
 
 .sub-headers-font {
   font-family: $sub-headers-font;
-}
-
-.body-font {
-  font-family: $body-font;
 }
 
 .text-yellow {
@@ -41,13 +41,5 @@ $sub-headers-font: 'Poppins', sans-serif;
 
 .text-grey {
   color: $gambly-grey;
-}
-
-.search-subtext > h5 {
-  color: $white;
-  size:16px;
-  font-style: italic;
-  padding-left: 8px;
-  margin-top: -10px;
 }
 
